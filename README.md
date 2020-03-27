@@ -4,4 +4,4 @@ Questionnaire web app (PWA) to stop spread of COVID-19 disease (infection by SAR
 
 ### Status
 
-[status](https://badgen.net/badge/DEV-status/in-progress@update@2020-03-27/orange)
+![status](https://badgen.net/badge/DEV-status/in-progress@update@2020-03-27/orange)
