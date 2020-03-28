@@ -6,6 +6,24 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { MainLayoutComponent } from '../layouts/main-layout/main-layout.component';
 
 const OR = (url: UrlSegment[], paths: string[]): UrlMatchResult => {
+
+  // console.log('OR.UrlSegment[]', url);
+
+  // BAD IDEA, do not use it
+  // Access to #/terms, it is required for ngx-translate
+  // let hash = window.location.hash;
+  // console.log(hash);
+  // if (hash) {
+  //   hash = hash.replace('#', '').replace('/', '');
+  //   if (paths.includes(hash)) {
+  //     window.location.hash = '';
+  //     return {
+  //       consumed: url
+  //     };
+  //   }
+  // }
+
+  // Classic Angular Router handling
   if (!url || !url.length) {
     return null;
   }

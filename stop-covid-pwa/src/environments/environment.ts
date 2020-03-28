@@ -7,7 +7,7 @@ export const environment = {
   app: {
     bar: {
       title: {
-        hr: 'eTrijaža'
+        hr: 'eTrijaža' // NOTE: this is Proprity #3, look at AppBarComponent
       }
     }
   }

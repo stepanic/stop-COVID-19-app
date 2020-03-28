@@ -1,0 +1,46 @@
+{
+    "APP": {
+        "TITLE": {
+            "text": "eAnamneza"
+        },
+        "BAR": {
+            "SIDENAV": {
+                "QUESTIONNAIRE": {
+                    "text": "Upitnik"
+                },
+                "GENERAL_HYGIENE_MEASURES": {
+                    "text": "Opće higijenske mjere",
+                    "link": "/opce-higijenske-mjere"
+                },
+                "ABOUT_COVID-19": {
+                    "text": "Osnovno o bolesti COVID-19",
+                    "link": "/osnovno-COVID-19"
+                },
+
+                "ABOUT_APP": {
+                    "text": "O APLIKACIJI",
+                    "link": "/o-aplikaciji"
+                },
+                "ABOUT_AUTHORS": {
+                    "text": "O AUTORIMA",
+                    "link": "/o-autorima"
+                }
+            }
+        }
+    },
+    "HOME": {
+        "TITLE": {
+            "text": "{{ appTitle }} / Naslovna"
+        }
+    },
+    "QUESTION": {
+        "Q1": [
+            { "text": "Jeste li u <b>samoizolaciji</b>?" }
+        ],
+        "Q10": [
+            { "text": "Jeste li u posljednjih 14 dana bili <b>u</b> " },
+            { "text": "<b>bliskom</b>", "link": "/terms" },
+            { "text": " <b>kontaktu</b> s <b>osobom s potvrđenom COVID-19</b> infekcijom?" }
+        ]
+    }
+}

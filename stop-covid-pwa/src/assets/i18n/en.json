@@ -1,0 +1,40 @@
+{
+    "APP": {
+        "TITLE": {
+            "text": "eAnamnesis"
+        },
+        "BAR": {
+            "SIDENAV": {
+                "QUESTIONNAIRE": {
+                    "text": "Questionnaire",
+                    "link": "/"
+                },
+                "GENERAL_HYGIENE_MEASURES": {
+                    "text": "General hygiene measures",
+                    "link": "/general-hygiene-measures"
+                },
+                "ABOUT_COVID-19": {
+                    "text": "About COVID-19 disease",
+                    "link": "/about-COVID-19"
+                },
+
+                "ABOUT_APP": {
+                    "icon": "perm_device_information",
+                    "text": "ABOUT APP",
+                    "link": "/about-app"
+                },
+                "ABOUT_AUTHORS": {
+                    "icon": "supervisor_account",
+                    "text": "ABOUT AUTHORS",
+                    "link": "/about-authors"
+                }
+            }
+        }
+    },
+    
+    "HOME": {
+        "HELLO": "hello {{value}}"
+    }
+
+    
+}

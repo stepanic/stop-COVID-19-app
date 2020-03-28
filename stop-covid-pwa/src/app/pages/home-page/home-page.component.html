@@ -1,1 +1,27 @@
 <p>home-page works4!</p>
+
+
+
+
+
+<label>
+    {{ 'HOME.SELECT' | translate }}
+    <select #langSelect (change)="translate.use(langSelect.value)">
+        <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+    </select>
+
+    {{ translate.currentLang }}
+</label>
+
+
+<app-question [id]="'Q1'"></app-question>
+<app-question [id]="'Q10'"></app-question>
+
+
+<!-- <div>
+    <span [innerHTML]="'QUESTIONS.Q9.0.text' | translate"></span>
+    <a [routerLink]="[ 'QUESTIONS.Q9.1.link' | translate ]" >
+        <span [innerHTML]="'QUESTIONS.Q9.1.text' | translate"></span>
+    </a>
+    <span [innerHTML]="'QUESTIONS.Q9.2.text' | translate"></span>
+</div> -->

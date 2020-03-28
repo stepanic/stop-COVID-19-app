@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { AppBarService } from './service/app-bar.service';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { TranslateService } from '@ngx-translate/core';
+import { MediaMatcher, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-bar',
@@ -12,19 +13,26 @@ import { environment } from 'src/environments/environment';
 export class AppBarComponent implements OnInit, OnDestroy {
 
   // Input has the most priority, it overrides value from observer
-  // Priority #1
+  // Priority #1 - form component attribute
   @Input() title: string;
-
   private title$: Subscription;
 
+  public queryXSmall: MediaQueryList;
+
   constructor(
-    private appBarService: AppBarService
+    private appBarService: AppBarService,
+    public translate: TranslateService,
+    private media: MediaMatcher
   ) {
     // console.log('AppBarComponent.constructor', this.title);
 
-    // Priority #2
+    console.log(Breakpoints.XSmall);
+
+    this.queryXSmall = this.media.matchMedia(Breakpoints.XSmall);
+
+    // Priority #2 - from appBarService
     this.title$ = this.appBarService.Title$.subscribe(title => {
-      // console.log('AppBarComponent.Title', title);
+      console.log('AppBarComponent.Title', title);
       this.title = title;
     });
   }
@@ -37,7 +45,7 @@ export class AppBarComponent implements OnInit, OnDestroy {
 
     // console.log('AppBarComponent.ngOnInit', this.title);
 
-    // Priority #3
+    // Priority #3 - from environemnt
     if (!this.title) {
       this.title = environment.app?.bar.title.hr || 'eTrijaza';
     }

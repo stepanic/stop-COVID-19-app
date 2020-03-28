@@ -12,7 +12,7 @@ import { SharedModule } from '../shared.module';
   declarations: [HomePageComponent, TermsPageComponent],
   imports: [
     CommonModule,
-    // SharedModule,
+    SharedModule,
     PagesRoutingModule
   ]
 })
