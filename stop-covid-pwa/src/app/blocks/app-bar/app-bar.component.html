@@ -1,61 +1,71 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <button mat-icon-button (click)="snav.toggle()" >
-            <mat-icon class="" aria-hidden="false" aria-label="Menu"  >{{ snav.opened ? 'close' : 'menu' }}</mat-icon>
-        </button>
-        <span class="title">{{ title }}</span>
+<div class="app-bar-wrapper" >
 
-        <span class="flex-spacer"></span>
-        
-        <button mat-raised-button color="primary"
-                class="lang-button"
-                (click)="translate.use(translate.getLangs()[(translate.getLangs().indexOf(translate.currentLang) + 1) % translate.getLangs().length])" >
-            {{ translate.currentLang }}
-        </button>
-    </mat-toolbar-row>
-</mat-toolbar>
-
-<mat-sidenav-container class="sidebar-container" >
-    <mat-sidenav #snav [mode]="queryXSmall.matches ? 'over' : 'side'" opened >
-
-        <mat-nav-list>
-            <a mat-list-item 
-               *ngFor="let part of ['QUESTIONNAIRE', 'GENERAL_HYGIENE_MEASURES', 'ABOUT_COVID-19']" 
-               (click)="snav.close()"
-               [routerLink]="[ 'APP.BAR.SIDENAV.' + part + '.link' | translate ]" >
-                {{ 'APP.BAR.SIDENAV.' + part + '.text' | translate }}
+    <mat-toolbar color="primary" >
+        <mat-toolbar-row >
+            <button mat-icon-button (click)="snav.toggle()" >
+                <mat-icon class="" aria-hidden="false" aria-label="Menu"  >{{ snav.opened ? 'close' : 'menu' }}</mat-icon>
+            </button>
+            <a [routerLink]="['/']" >
+                <span class="title">{{ title }}</span>
             </a>
+    
+            <span class="flex-spacer"></span>
             
-            <span class="flex-spacer" ></span>
-
-            <mat-divider></mat-divider>
-
-            <a mat-list-item 
-               *ngFor="let part of ['ABOUT_APP', 'ABOUT_AUTHORS']" (click)="snav.close()"
-               (click)="snav.close()"
-               [routerLink]="[ 'APP.BAR.SIDENAV.' + part + '.link' | translate ]" >
-                <mat-icon matListIcon>{{ 'APP.BAR.SIDENAV.' + part + '.icon' | translate }}</mat-icon>
-                <h3 matLine>{{ 'APP.BAR.SIDENAV.' + part + '.text' | translate }}</h3>
-            </a>
-
-            <mat-divider></mat-divider>
-
-            <div class="language-wrapper">
-                <ng-container *ngFor="let lang of translate.getLangs()" >
-                    <button *ngIf="lang !== translate.currentLang" 
-                            class="lang-button"
-                            mat-button 
-                            (click)="translate.use(lang)" >{{ lang }}</button>
-                    <button *ngIf="lang === translate.currentLang" 
-                            class="lang-button"
-                            mat-raised-button
-                            color="primary" >{{ lang }}</button>
-                </ng-container>
+            <button mat-raised-button color="secondary" *ngIf="isLangChangerEnabled"
+                    class="lang-button"
+                    (click)="translate.use(translate.getLangs()[(translate.getLangs().indexOf(translate.currentLang) + 1) % translate.getLangs().length])" >
+                {{ translate.currentLang }}
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    
+    <mat-sidenav-container class="sidebar-container" >
+        <mat-sidenav #snav [mode]="queryXSmall.matches ? 'over' : 'side'" >
+    
+            <mat-nav-list>
+                <a mat-list-item 
+                   *ngFor="let part of ['QUESTIONNAIRE', 'GENERAL_HYGIENE_MEASURES', 'ABOUT_COVID-19']" 
+                   (click)="snav.close()"
+                   [routerLink]="[ 'APP.BAR.SIDENAV.' + part + '.link' | translate ]" >
+                    {{ 'APP.BAR.SIDENAV.' + part + '.text' | translate }}
+                </a>
+                
+                <span class="flex-spacer" ></span>
+    
+                <mat-divider></mat-divider>
+    
+                <a mat-list-item 
+                   *ngFor="let part of [
+                        { id: 'ABOUT_APP', icon: 'perm_device_information' }, 
+                        { id: 'ABOUT_AUTHORS', icon: 'supervisor_account' }
+                    ]" (click)="snav.close()"
+                   (click)="snav.close()"
+                   [routerLink]="[ 'APP.BAR.SIDENAV.' + part.id + '.link' | translate ]" >
+                    <mat-icon matListIcon>{{ part.icon }}</mat-icon>
+                    <h3 matLine>{{ 'APP.BAR.SIDENAV.' + part.id + '.text' | translate }}</h3>
+                </a>
+    
+                <mat-divider *ngIf="isLangChangerEnabled"></mat-divider>
+    
+                <div class="language-wrapper" *ngIf="isLangChangerEnabled">
+                    <ng-container *ngFor="let lang of translate.getLangs()" >
+                        <button *ngIf="lang !== translate.currentLang" 
+                                class="lang-button"
+                                mat-button 
+                                (click)="translate.use(lang)" >{{ lang }}</button>
+                        <button *ngIf="lang === translate.currentLang" 
+                                class="lang-button"
+                                mat-raised-button
+                                color="secondary" >{{ lang }}</button>
+                    </ng-container>
+                </div>
+            </mat-nav-list>
+    
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="main-content" >
+                <ng-content></ng-content>
             </div>
-        </mat-nav-list>
-
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <ng-content></ng-content>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

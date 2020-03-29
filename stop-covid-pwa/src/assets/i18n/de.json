@@ -1,7 +1,173 @@
 {
-    "APP": {
-        "TITLE": {
-            "text": "eAnamnese"
-        }
-    }
+	"APP": {
+		"BAR": {
+			"SIDENAV": {
+				"ABOUT_APP": {
+					"link": "",
+					"text": ""
+				},
+				"ABOUT_AUTHORS": {
+					"link": "",
+					"text": ""
+				},
+				"ABOUT_COVID-19": {
+					"link": "",
+					"text": ""
+				},
+				"GENERAL_HYGIENE_MEASURES": {
+					"link": "",
+					"text": ""
+				},
+				"QUESTIONNAIRE": {
+					"link": "",
+					"text": "Fragebogen"
+				}
+			}
+		},
+		"DESCRIPTION": {
+			"text": ""
+		},
+		"TITLE": {
+			"text": "eAnamnese"
+		}
+	},
+	"CONFIG": {
+		"QUESTION": {
+			"ANSWER": {
+				"TYPE": {
+					"BINARY": {
+						"NO": "",
+						"YES": ""
+					},
+					"MULTIPLE": {
+						"SUBMIT": {
+							"NEXT": ""
+						}
+					}
+				}
+			}
+		}
+	},
+	"HOME": {
+		"HELLO": "",
+		"TITLE": {
+			"text": ""
+		}
+	},
+	"QUESTION": {
+		"Q01": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q02": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q03": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q04": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q05": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q06": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q07": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q08": {
+			"0": {
+				"text": ""
+			},
+			"1": {
+				"link": "",
+				"text": ""
+			},
+			"2": {
+				"text": ""
+			},
+			"ANSWER_CHOICE": {
+				"0": {
+					"text": ""
+				},
+				"1": {
+					"text": ""
+				},
+				"2": {
+					"text": ""
+				},
+				"3": {
+					"text": ""
+				}
+			}
+		},
+		"Q09": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q10": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q11": {
+			"0": {
+				"text": ""
+			},
+			"1": {
+				"link": "",
+				"text": ""
+			},
+			"2": {
+				"text": ""
+			}
+		},
+		"Q12": {
+			"0": {
+				"text": ""
+			},
+			"1": {
+				"link": "",
+				"text": ""
+			},
+			"2": {
+				"text": ""
+			}
+		},
+		"Q13": {
+			"0": {
+				"text": ""
+			},
+			"1": {
+				"link": "",
+				"text": ""
+			},
+			"2": {
+				"text": ""
+			},
+			"3": {
+				"link": "",
+				"text": ""
+			},
+			"4": {
+				"text": ""
+			}
+		}
+	}
 }

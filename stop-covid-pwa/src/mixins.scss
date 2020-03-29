@@ -1,0 +1,21 @@
+@mixin niceMinHeight($more-offset: 0px) {
+    min-height: calc(100vh - 56px - #{$more-offset});
+            
+    @media screen and (min-width: 600px) {
+        min-height: calc(100vh - 64px - #{$more-offset});
+    }
+}
+
+@mixin flexSpacer {
+    .flex-spacer {
+        flex: 1 1 auto;
+    }
+}
+
+// Move content bellow AppBar
+@mixin smartTopPadding {
+    padding-top: 52px;
+    @media screen and (min-width: 600px) {
+        padding-top: 64px;
+    }
+}

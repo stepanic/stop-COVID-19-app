@@ -19,15 +19,13 @@ export class AppBarComponent implements OnInit, OnDestroy {
 
   public queryXSmall: MediaQueryList;
 
+  public isLangChangerEnabled = true; // When english translation will be full, put this to `true`
+
   constructor(
     private appBarService: AppBarService,
     public translate: TranslateService,
     private media: MediaMatcher
   ) {
-    // console.log('AppBarComponent.constructor', this.title);
-
-    console.log(Breakpoints.XSmall);
-
     this.queryXSmall = this.media.matchMedia(Breakpoints.XSmall);
 
     // Priority #2 - from appBarService
@@ -42,8 +40,6 @@ export class AppBarComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-
-    // console.log('AppBarComponent.ngOnInit', this.title);
 
     // Priority #3 - from environemnt
     if (!this.title) {

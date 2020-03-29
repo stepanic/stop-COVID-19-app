@@ -1,40 +1,173 @@
 {
-    "APP": {
-        "TITLE": {
-            "text": "eAnamnesis"
-        },
-        "BAR": {
-            "SIDENAV": {
-                "QUESTIONNAIRE": {
-                    "text": "Questionnaire",
-                    "link": "/"
-                },
-                "GENERAL_HYGIENE_MEASURES": {
-                    "text": "General hygiene measures",
-                    "link": "/general-hygiene-measures"
-                },
-                "ABOUT_COVID-19": {
-                    "text": "About COVID-19 disease",
-                    "link": "/about-COVID-19"
-                },
-
-                "ABOUT_APP": {
-                    "icon": "perm_device_information",
-                    "text": "ABOUT APP",
-                    "link": "/about-app"
-                },
-                "ABOUT_AUTHORS": {
-                    "icon": "supervisor_account",
-                    "text": "ABOUT AUTHORS",
-                    "link": "/about-authors"
-                }
-            }
-        }
-    },
-    
-    "HOME": {
-        "HELLO": "hello {{value}}"
-    }
-
-    
+	"APP": {
+		"BAR": {
+			"SIDENAV": {
+				"ABOUT_APP": {
+					"link": "/about-app",
+					"text": "ABOUT APP"
+				},
+				"ABOUT_AUTHORS": {
+					"link": "/about-authors",
+					"text": "ABOUT AUTHORS"
+				},
+				"ABOUT_COVID-19": {
+					"link": "/about-COVID-19",
+					"text": "About COVID-19 disease"
+				},
+				"GENERAL_HYGIENE_MEASURES": {
+					"link": "/general-hygiene-measures",
+					"text": "General hygiene measures"
+				},
+				"QUESTIONNAIRE": {
+					"link": "/question/1",
+					"text": "Questionnaire"
+				}
+			}
+		},
+		"DESCRIPTION": {
+			"text": "The application is a simple questionnaire for taking a history of people potentially infected with COVID-19."
+		},
+		"TITLE": {
+			"text": "eAnamnesis"
+		}
+	},
+	"CONFIG": {
+		"QUESTION": {
+			"ANSWER": {
+				"TYPE": {
+					"BINARY": {
+						"NO": "No",
+						"YES": "Yes"
+					},
+					"MULTIPLE": {
+						"SUBMIT": {
+							"NEXT": "Next question"
+						}
+					}
+				}
+			}
+		}
+	},
+	"HOME": {
+		"HELLO": "hello {{value}}",
+		"TITLE": {
+			"text": ""
+		}
+	},
+	"QUESTION": {
+		"Q01": {
+			"0": {
+				"text": "Are you in <b>self-isolation</b>?"
+			}
+		},
+		"Q02": {
+			"0": {
+				"text": "Do you have <b>fever</b> ?"
+			}
+		},
+		"Q03": {
+			"0": {
+				"text": "Are you <b>coughing</b>?"
+			}
+		},
+		"Q04": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q05": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q06": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q07": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q08": {
+			"0": {
+				"text": ""
+			},
+			"1": {
+				"link": "",
+				"text": ""
+			},
+			"2": {
+				"text": ""
+			},
+			"ANSWER_CHOICE": {
+				"0": {
+					"text": ""
+				},
+				"1": {
+					"text": ""
+				},
+				"2": {
+					"text": ""
+				},
+				"3": {
+					"text": ""
+				}
+			}
+		},
+		"Q09": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q10": {
+			"0": {
+				"text": ""
+			}
+		},
+		"Q11": {
+			"0": {
+				"text": ""
+			},
+			"1": {
+				"link": "",
+				"text": ""
+			},
+			"2": {
+				"text": ""
+			}
+		},
+		"Q12": {
+			"0": {
+				"text": ""
+			},
+			"1": {
+				"link": "",
+				"text": ""
+			},
+			"2": {
+				"text": ""
+			}
+		},
+		"Q13": {
+			"0": {
+				"text": ""
+			},
+			"1": {
+				"link": "",
+				"text": ""
+			},
+			"2": {
+				"text": ""
+			},
+			"3": {
+				"link": "",
+				"text": ""
+			},
+			"4": {
+				"text": ""
+			}
+		}
+	}
 }

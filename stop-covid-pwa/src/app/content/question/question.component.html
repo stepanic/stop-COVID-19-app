@@ -1,6 +1,22 @@
-<ng-container *ngFor="let part of question">
-    <span *ngIf="!part.link" [innerHTML]="part.text"></span>
-    <a *ngIf="part.link" [routerLink]="[ part.link ]" >
-        <span [innerHTML]="part.text"></span>
-    </a>
-</ng-container>
+<div class="question-wrapper" >
+
+    <ng-container *ngFor="let part of question">
+        <span *ngIf="!part.link" [innerHTML]="part.text"></span>
+        <a *ngIf="part.link" [routerLink]="[ part.link ]" >
+            <span [innerHTML]="part.text"></span>
+        </a>
+    </ng-container>
+    
+    <div class="answer-choices-wrapper" *ngIf="answerChoices" >
+        <ng-container *ngFor="let choice of answerChoices">
+            <div class="choice">
+                <mat-checkbox [value]="choice.text" (change)="onChangeAnswerChoice($event)">{{ choice.text }}</mat-checkbox>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+
+
+<!-- {{ question | json }}
+{{ answerChoices | json }} -->

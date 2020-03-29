@@ -4,6 +4,7 @@ import { RouterModule, Routes, UrlSegment, UrlMatchResult } from '@angular/route
 import { TermsPageComponent } from './terms-page/terms-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MainLayoutComponent } from '../layouts/main-layout/main-layout.component';
+import { QuestionsPageComponent } from './questions-page/questions-page.component';
 
 const OR = (url: UrlSegment[], paths: string[]): UrlMatchResult => {
 
@@ -56,6 +57,14 @@ const routes: Routes = [
             en: 'Terms title'
           }
         }
+      },
+      {
+        path: 'pitanje/:questionId', // HR
+        component: QuestionsPageComponent
+      },
+      {
+        path: 'question/:questionId', // EN
+        component: QuestionsPageComponent
       },
       {
         path: '**',

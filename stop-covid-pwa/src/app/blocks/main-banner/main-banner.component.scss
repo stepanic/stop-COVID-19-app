@@ -1,0 +1,21 @@
+.main-banner-wrapper {
+    // background-color: pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+
+    .main-banner {
+        background-color: #f5f5f5;
+        // background-color: #F3F3F3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+
+        @media screen and (max-width: 600px) and (orientation: landscape) {
+            // background-color: transparent;
+            display: none;
+        }
+    }
+}

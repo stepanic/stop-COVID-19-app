@@ -1,4 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import './variables.scss';
+@import './mixins.scss';
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@include flexSpacer();
+
+.fixed-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fixed-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+a {
+  color: $colorDanger;
+}
+
+// Custom checkbox at question component
+.question-wrapper .mat-checkbox-checked .mat-checkbox-background {
+  background-color: $colorDanger;
+}

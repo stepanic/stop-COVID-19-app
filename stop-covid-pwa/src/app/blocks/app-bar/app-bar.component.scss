@@ -1,62 +1,63 @@
-@mixin flexSpacer {
-    .flex-spacer {
-        flex: 1 1 auto;
+@import '../../../mixins.scss';
+
+.app-bar-wrapper {
+
+    .lang-button {
+        text-transform: uppercase;
     }
-}
+    mat-toolbar-row {
 
-.lang-button {
-    text-transform: uppercase;
-}
-
-mat-toolbar-row {
-
-    .title {
-        margin-left: 8px;
-    }
-
-    .bar-icon {
+        background-color: black;
     
-        // &:first-child 
-        // padding: 0 14px;
-    }
-
-    &:first-child {
-        // padding-left: 0;
-    }
-
-    @include flexSpacer();
-}
-
-@mixin niceMinHeight($more-offset: 0px) {
-    min-height: calc(100vh - 56px - #{$more-offset});
-            
-    @media screen and (min-width: 600px) {
-        min-height: calc(100vh - 64px - #{$more-offset});
-    }
-}
-
-.sidebar-container {
+        .title {
+            margin-left: 8px;
+        }
+        a {
+            color: unset;
+            text-decoration: unset;
+        }
     
-    @include niceMinHeight();
-
-    mat-sidenav {
+        .bar-icon {
         
-        mat-nav-list {
+            // &:first-child 
+            // padding: 0 14px;
+        }
+    
+        &:first-child {
+            // padding-left: 0;
+        }
+    
+    }
+    
+    .sidebar-container {
+        
+        @include niceMinHeight();
+    
+        mat-sidenav {
             
-            display: flex;
-            flex-direction: column;
-
-            @include niceMinHeight($more-offset: 8px);
-            @include flexSpacer();
-
-            .language-wrapper {
-                margin: 8px;
+            mat-nav-list {
+                
+                display: flex;
+                flex-direction: column;
+    
+                @include niceMinHeight($more-offset: 8px);
+    
+                .language-wrapper {
+                    margin: 8px;
+                }
+                
             }
+
             
         }
         
+        .main-content {
+            @include niceMinHeight();
+        }
+        
+        
     }
-
-    
 }
+
+
 

@@ -1,46 +1,173 @@
 {
-    "APP": {
-        "TITLE": {
-            "text": "eAnamneza"
-        },
-        "BAR": {
-            "SIDENAV": {
-                "QUESTIONNAIRE": {
-                    "text": "Upitnik"
-                },
-                "GENERAL_HYGIENE_MEASURES": {
-                    "text": "Opće higijenske mjere",
-                    "link": "/opce-higijenske-mjere"
-                },
-                "ABOUT_COVID-19": {
-                    "text": "Osnovno o bolesti COVID-19",
-                    "link": "/osnovno-COVID-19"
-                },
-
-                "ABOUT_APP": {
-                    "text": "O APLIKACIJI",
-                    "link": "/o-aplikaciji"
-                },
-                "ABOUT_AUTHORS": {
-                    "text": "O AUTORIMA",
-                    "link": "/o-autorima"
-                }
-            }
-        }
-    },
-    "HOME": {
-        "TITLE": {
-            "text": "{{ appTitle }} / Naslovna"
-        }
-    },
-    "QUESTION": {
-        "Q1": [
-            { "text": "Jeste li u <b>samoizolaciji</b>?" }
-        ],
-        "Q10": [
-            { "text": "Jeste li u posljednjih 14 dana bili <b>u</b> " },
-            { "text": "<b>bliskom</b>", "link": "/terms" },
-            { "text": " <b>kontaktu</b> s <b>osobom s potvrđenom COVID-19</b> infekcijom?" }
-        ]
-    }
+	"APP": {
+		"BAR": {
+			"SIDENAV": {
+				"ABOUT_APP": {
+					"link": "/o-aplikaciji",
+					"text": "O APLIKACIJI"
+				},
+				"ABOUT_AUTHORS": {
+					"link": "/o-autorima",
+					"text": "O AUTORIMA"
+				},
+				"ABOUT_COVID-19": {
+					"link": "/osnovno-COVID-19",
+					"text": "Osnovno o bolesti COVID-19"
+				},
+				"GENERAL_HYGIENE_MEASURES": {
+					"link": "/opce-higijenske-mjere",
+					"text": "Opće higijenske mjere"
+				},
+				"QUESTIONNAIRE": {
+					"link": "/pitanje/1",
+					"text": "Upitnik"
+				}
+			}
+		},
+		"DESCRIPTION": {
+			"text": "Aplikacija je jednostavan upitnik za uzimanje anamneze osoba potencijalno inficiranih sa COVID-19."
+		},
+		"TITLE": {
+			"text": "eAnamneza"
+		}
+	},
+	"CONFIG": {
+		"QUESTION": {
+			"ANSWER": {
+				"TYPE": {
+					"BINARY": {
+						"NO": "Ne",
+						"YES": "Da"
+					},
+					"MULTIPLE": {
+						"SUBMIT": {
+							"NEXT": "Sljedeće pitanje"
+						}
+					}
+				}
+			}
+		}
+	},
+	"HOME": {
+		"HELLO": "",
+		"TITLE": {
+			"text": "{{ appTitle }} / Naslovna"
+		}
+	},
+	"QUESTION": {
+		"Q01": {
+			"0": {
+				"text": "Jeste li u <b>samoizolaciji</b>?"
+			}
+		},
+		"Q02": {
+			"0": {
+				"text": "Imate li povišenu tjelesnu <b>temperaturu</b> (vrućica)?"
+			}
+		},
+		"Q03": {
+			"0": {
+				"text": "<b>Kašljete</b> li?"
+			}
+		},
+		"Q04": {
+			"0": {
+				"text": "<b>Boli</b> li Vas <b>grlo (grlobolja)</b>?"
+			}
+		},
+		"Q05": {
+			"0": {
+				"text": "Imate li <b>problema s kratkoćom daha</b> (zaduha/otežanog disanja)?"
+			}
+		},
+		"Q06": {
+			"0": {
+				"text": "Stvara li Vam se <b>gubitak osjeta okusa</b> ili <b>njuha</b>?"
+			}
+		},
+		"Q07": {
+			"0": {
+				"text": "Imate li <b>proljev i/ili povraćanje</b>?"
+			}
+		},
+		"Q08": {
+			"0": {
+				"text": "Imate li "
+			},
+			"1": {
+				"link": "/pojasnjenje/zimica-tresavica-bol-u-misicima-iznemoglost",
+				"text": "<b>zimicu, tresavicu, bol u mišićima i/ili iznemoglost</b>"
+			},
+			"2": {
+				"text": "?"
+			},
+			"ANSWER_CHOICE": {
+				"0": {
+					"text": "ZIMICA"
+				},
+				"1": {
+					"text": "TRESAVICA"
+				},
+				"2": {
+					"text": "BOL U MIŠIĆIMA"
+				},
+				"3": {
+					"text": "IZNEMOGLOST"
+				}
+			}
+		},
+		"Q09": {
+			"0": {
+				"text": "Jeste li putovali <b>izvan Hrvatske u posljednjih 14 dana</b>?"
+			}
+		},
+		"Q10": {
+			"0": {
+				"text": "Radite li u <b>laboratoriju</b>, <b>zdravstvu</b> ili <b>veterini</b>?<br><br>Jeste li <b>autoprijevoznik</b>?"
+			}
+		},
+		"Q11": {
+			"0": {
+				"text": "Jeste li u posljednjih 14 dana bili <b>u</b> "
+			},
+			"1": {
+				"link": "/pojasnjenje/bliski-kontakt",
+				"text": "<b>bliskom</b>"
+			},
+			"2": {
+				"text": " <b>kontaktu</b> s <b>osobom s potvrđenom COVID-19</b> infekcijom?"
+			}
+		},
+		"Q12": {
+			"0": {
+				"text": "Jeste li u posljednjih 14 dana bili <b>u</b> "
+			},
+			"1": {
+				"link": "/pojasnjenje/bliski-kontakt",
+				"text": "<b>bliskom</b>"
+			},
+			"2": {
+				"text": " <b>kontaktu</b> s <b>osobom pod mjerama samoizolacije</b>?"
+			}
+		},
+		"Q13": {
+			"0": {
+				"text": "Boravite li <b>u</b> "
+			},
+			"1": {
+				"link": "/pojasnjenje/zajednica",
+				"text": "<b>zajednici</b>"
+			},
+			"2": {
+				"text": " gdje je <b>dvije ili više osoba</b> zahvaćeno visokom temperaturom, "
+			},
+			"3": {
+				"link": "/pojasnjenje/disne-tegobe",
+				"text": "<b>dišnim tegobama</b>"
+			},
+			"4": {
+				"text": " <b>ili upalom pluća</b>?"
+			}
+		}
+	}
 }
