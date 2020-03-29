@@ -15,6 +15,7 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
   public question: any;
   public answerChoices: string[];
 
+  public currentPath: string;
 
   private subscription: Subscription = new Subscription();
 
@@ -22,12 +23,12 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnInit(): void {
-    this.fetchTranslation();
+    this.reloadData();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.id = changes.id.currentValue;
-    this.fetchTranslation();
+    this.reloadData();
   }
 
   ngOnDestroy(): void {
@@ -42,6 +43,14 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
     const choice = {};
     choice[changes.source.value] = changes.checked;
     this.changeAnswerChoice.emit(choice);
+  }
+
+  /**
+   * Reload data for current question
+   */
+  private reloadData() {
+    this.fetchTranslation();
+    this.setupCurrentPath();
   }
 
   /**
@@ -67,6 +76,13 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
 
       // console.log(this.question);
     }));
+  }
+
+  /**
+   * Store current path
+   */
+  private setupCurrentPath() {
+    this.currentPath = window.location.pathname;
   }
 
 }

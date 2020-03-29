@@ -4,6 +4,7 @@ import { AppBarComponent } from './app-bar/app-bar.component';
 import { AppShellComponent } from './app-shell/app-shell.component';
 import { SharedModule } from '../shared.module';
 import { MainBannerComponent } from './main-banner/main-banner.component';
+import { AppBarLeafComponent } from './app-bar-leaf/app-bar-leaf.component';
 
 
 
@@ -11,7 +12,8 @@ import { MainBannerComponent } from './main-banner/main-banner.component';
   declarations: [
     AppBarComponent,
     AppShellComponent,
-    MainBannerComponent
+    MainBannerComponent,
+    AppBarLeafComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { MainBannerComponent } from './main-banner/main-banner.component';
   ],
   exports: [
     AppShellComponent,
-    MainBannerComponent
+    MainBannerComponent,
+    AppBarLeafComponent
   ]
 })
 export class BlocksModule { }

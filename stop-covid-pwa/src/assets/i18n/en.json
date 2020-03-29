@@ -48,6 +48,125 @@
 			}
 		}
 	},
+	"EXPLANATION": {
+		"CHILLS_SHAKING_PAIN-IN-MUSCLES_EXHAUSTION": {
+			"BODY": {
+				"0": {
+					"text": "<h2>What is chills?</h2>"
+				},
+				"1": {
+					"text": "<p>Chills is a feeling of coldness in the body without a clear external cause.</p>"
+				},
+				"2": {
+					"text": "<h2>What is shaking?</h2>"
+				},
+				"3": {
+					"text": "<p>A tremor is an involuntary shaking of the whole body.</p>"
+				},
+				"4": {
+					"text": "<h2>Muscle pain?</h2>"
+				},
+				"5": {
+					"text": "<p>Muscle pain means the sensation of pain for all muscles, especially those that move or the muscles of the eye.</p>"
+				},
+				"6": {
+					"text": "<h2>What is exhaustion?</h2>"
+				},
+				"7": {
+					"text": "<p>The sense of exhaustion implies a feeling of general weakness to the point that fatigue occurs when performing daily tasks.</p>"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Explanation"
+				}
+			}
+		},
+		"CLOSE-CONTACT": {
+			"BODY": {
+				"0": {
+					"text": "<h2>Close contact includes the following</h2>"
+				},
+				"1": {
+					"text": "<p>&bull; <b>Sharing a common household</b> with a COVID-19 patient</p>"
+				},
+				"2": {
+					"text": "<p>&bull; <b>Direct physical contact</b> with COVID-19 patients (eg handling, kissing, sexual intercourse, etc.)</p>"
+				},
+				"3": {
+					"text": "<p>&bull; <b>Unprotected direct contact with infectious secretions</b> with COVID-19 (touching used handkerchiefs with bare hands, laundry, etc.)</p>"
+				},
+				"4": {
+					"text": "<p>&bull; <b>Indoor stay</b> (eg classroom, meeting room, waiting room at healthcare facility, etc.) with COVID-19 patient</p>"
+				},
+				"5": {
+					"text": ""
+				},
+				"6": {
+					"text": ""
+				},
+				"7": {
+					"text": "<p>Source: <b>HZJZ</b></p>"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Close contact"
+				}
+			}
+		},
+		"COMMUNITY": {
+			"BODY": {
+				"0": {
+					"text": "<h2>Community stands for</h2>"
+				},
+				"1": {
+					"text": "<p>&bull; household members</p>"
+				},
+				"2": {
+					"text": ""
+				},
+				"3": {
+					"text": "<p>&bull; students in a class or group</p>"
+				},
+				"4": {
+					"text": "<p>&bull; members of the workforce<p>"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Community"
+				}
+			}
+		},
+		"RESPIRATORY-PROBLEMS": {
+			"BODY": {
+				"0": {
+					"text": "<h2>Respiratory disorders imply</h2>"
+				},
+				"1": {
+					"text": "<p>&bull; cough</p>"
+				},
+				"2": {
+					"text": "<p>&bull; sneeze</p>"
+				},
+				"3": {
+					"text": "<p>&bull; sore throat</p>"
+				},
+				"4": {
+					"text": "<p>&bull; shortness of breath</p>"
+				},
+				"5": {
+					"text": "<p>&bull; loss of sensation and smell</p>"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Respiratory problems"
+				}
+			}
+		}
+	},
 	"HOME": {
 		"HELLO": "hello {{value}}",
 		"TITLE": {
@@ -92,14 +211,14 @@
 		},
 		"Q08": {
 			"0": {
-				"text": ""
+				"text": "Do you have"
 			},
 			"1": {
-				"link": "",
-				"text": ""
+				"link": "/explanation/shaking-chills-pain-in-muscles-exhaustion",
+				"text": "<b>chills, tremors, muscle aches and / or fatigue</b>"
 			},
 			"2": {
-				"text": ""
+				"text": "?"
 			},
 			"ANSWER_CHOICE": {
 				"0": {
@@ -128,14 +247,14 @@
 		},
 		"Q11": {
 			"0": {
-				"text": ""
+				"text": "Have you been <b>in</b> in the last 14 days <b>in</b> "
 			},
 			"1": {
-				"link": "",
-				"text": ""
+				"link": "/explanation/close-contact",
+				"text": "<b>close</b>"
 			},
 			"2": {
-				"text": ""
+				"text": " <b>contact</b> with <b>a person with a confirmed COVID-19</b> infection?"
 			}
 		},
 		"Q12": {

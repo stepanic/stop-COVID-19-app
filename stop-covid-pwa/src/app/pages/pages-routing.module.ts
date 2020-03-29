@@ -5,8 +5,10 @@ import { TermsPageComponent } from './terms-page/terms-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MainLayoutComponent } from '../layouts/main-layout/main-layout.component';
 import { QuestionsPageComponent } from './questions-page/questions-page.component';
+import { ExplanationPageComponent } from './explanation-page/explanation-page.component';
+import { LeafLayoutComponent } from '../layouts/leaf-layout/leaf-layout.component';
 
-const OR = (url: UrlSegment[], paths: string[]): UrlMatchResult => {
+const OR = (url: UrlSegment[], paths: string[], level = 0): UrlMatchResult => {
 
   // console.log('OR.UrlSegment[]', url);
 
@@ -24,16 +26,19 @@ const OR = (url: UrlSegment[], paths: string[]): UrlMatchResult => {
   //   }
   // }
 
+  console.log('matcher.OR', url);
+
   // Classic Angular Router handling
   if (!url || !url.length) {
     return null;
   }
 
-  const path = url[0].path;
+  const path = url[level].path;
   if (paths.includes(path)) {
-    if (url.length > 1) {
-      return null; // exclude starts with, accept only exact match
-    }
+    // After introduced level this makes conflicts
+    // if (url.length > 1) {
+    //   return null; // exclude starts with, accept only exact match
+    // }
     return {
       consumed: url
     };
@@ -67,9 +72,72 @@ const routes: Routes = [
         component: QuestionsPageComponent
       },
       {
-        path: '**',
+        path: '',
         component: HomePageComponent
       }
+    ]
+  },
+  {
+    path: '',
+    component: LeafLayoutComponent,
+    children: [
+      {
+        path: 'pojasnjenje',
+
+        // TODO: improve matcher
+        // matcher: (url: UrlSegment[]): UrlMatchResult => {
+        //   return OR(url, ['pojasnjenje', 'explanation']);
+        // },
+        component: ExplanationPageComponent,
+        children: [
+          {
+            path: 'zimica-tresavica-bol-u-misicima-iznemoglost',
+            component: ExplanationPageComponent,
+            data: { tid: 'EXPLANATION.CHILLS_SHAKING_PAIN-IN-MUSCLES_EXHAUSTION' }
+          },
+          {
+            path: 'bliski-kontakt',
+            component: ExplanationPageComponent,
+            data: { tid: 'EXPLANATION.CLOSE-CONTACT' }
+          },
+          {
+            path: 'zajednica',
+            component: ExplanationPageComponent,
+            data: { tid: 'EXPLANATION.COMMUNITY' }
+          },
+          {
+            path: 'disne-tegobe',
+            component: ExplanationPageComponent,
+            data: { tid: 'EXPLANATION.RESPIRATORY-PROBLEMS' }
+          }
+        ]
+      },
+      {
+        path: 'explanation',
+        component: ExplanationPageComponent,
+        children: [
+          {
+            path: 'shaking-chills-pain-in-muscles-exhaustion',
+            component: ExplanationPageComponent,
+            data: { tid: 'EXPLANATION.CHILLS_SHAKING_PAIN-IN-MUSCLES_EXHAUSTION' }
+          },
+          {
+            path: 'close-contact',
+            component: ExplanationPageComponent,
+            data: { tid: 'EXPLANATION.CLOSE-CONTACT' }
+          },
+          {
+            path: 'community',
+            component: ExplanationPageComponent,
+            data: { tid: 'EXPLANATION.COMMUNITY' }
+          },
+          {
+            path: 'respiratory-problems',
+            component: ExplanationPageComponent,
+            data: { tid: 'EXPLANATION.RESPIRATORY-PROBLEMS' }
+          }
+        ]
+      },
     ]
   }
 ];

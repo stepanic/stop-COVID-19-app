@@ -19,3 +19,9 @@
         padding-top: 64px;
     }
 }
+@mixin smartTopMargin {
+    margin-top: 52px;
+    @media screen and (min-width: 600px) {
+        margin-top: 64px;
+    }
+}

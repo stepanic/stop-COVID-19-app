@@ -48,6 +48,125 @@
 			}
 		}
 	},
+	"EXPLANATION": {
+		"CHILLS_SHAKING_PAIN-IN-MUSCLES_EXHAUSTION": {
+			"BODY": {
+				"0": {
+					"text": ""
+				},
+				"1": {
+					"text": ""
+				},
+				"2": {
+					"text": ""
+				},
+				"3": {
+					"text": ""
+				},
+				"4": {
+					"text": ""
+				},
+				"5": {
+					"text": ""
+				},
+				"6": {
+					"text": ""
+				},
+				"7": {
+					"text": ""
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Klarstellung"
+				}
+			}
+		},
+		"CLOSE-CONTACT": {
+			"BODY": {
+				"0": {
+					"text": ""
+				},
+				"1": {
+					"text": ""
+				},
+				"2": {
+					"text": ""
+				},
+				"3": {
+					"text": ""
+				},
+				"4": {
+					"text": ""
+				},
+				"5": {
+					"text": ""
+				},
+				"6": {
+					"text": ""
+				},
+				"7": {
+					"text": ""
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": ""
+				}
+			}
+		},
+		"COMMUNITY": {
+			"BODY": {
+				"0": {
+					"text": ""
+				},
+				"1": {
+					"text": ""
+				},
+				"2": {
+					"text": ""
+				},
+				"3": {
+					"text": ""
+				},
+				"4": {
+					"text": ""
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": ""
+				}
+			}
+		},
+		"RESPIRATORY-PROBLEMS": {
+			"BODY": {
+				"0": {
+					"text": ""
+				},
+				"1": {
+					"text": ""
+				},
+				"2": {
+					"text": ""
+				},
+				"3": {
+					"text": ""
+				},
+				"4": {
+					"text": ""
+				},
+				"5": {
+					"text": ""
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": ""
+				}
+			}
+		}
+	},
 	"HOME": {
 		"HELLO": "",
 		"TITLE": {

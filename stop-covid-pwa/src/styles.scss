@@ -23,6 +23,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   bottom: 0;
 }
 
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
 a {
   color: $colorDanger;
 }

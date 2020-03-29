@@ -2,7 +2,7 @@
 
     <ng-container *ngFor="let part of question">
         <span *ngIf="!part.link" [innerHTML]="part.text"></span>
-        <a *ngIf="part.link" [routerLink]="[ part.link ]" >
+        <a *ngIf="part.link" [routerLink]="[ part.link ]" [state]="{ returnPath: currentPath }" >
             <span [innerHTML]="part.text"></span>
         </a>
     </ng-container>

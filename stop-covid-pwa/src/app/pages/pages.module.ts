@@ -7,11 +7,12 @@ import { LayoutsModule } from '../layouts/layouts.module';
 import { SharedModule } from '../shared.module';
 import { QuestionsPageComponent } from './questions-page/questions-page.component';
 import { BlocksModule } from '../blocks/blocks.module';
+import { ExplanationPageComponent } from './explanation-page/explanation-page.component';
 
 
 
 @NgModule({
-  declarations: [HomePageComponent, TermsPageComponent, QuestionsPageComponent],
+  declarations: [HomePageComponent, TermsPageComponent, QuestionsPageComponent, ExplanationPageComponent],
   imports: [
     CommonModule,
     SharedModule,

@@ -4,11 +4,12 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { BlocksModule } from '../blocks/blocks.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared.module';
+import { LeafLayoutComponent } from './leaf-layout/leaf-layout.component';
 
 
 
 @NgModule({
-  declarations: [MainLayoutComponent],
+  declarations: [MainLayoutComponent, LeafLayoutComponent],
   imports: [
     CommonModule,
     // SharedModule,

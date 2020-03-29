@@ -1,0 +1,9 @@
+@import '../../../mixins.scss';
+
+.explanation-page-wrapper {
+
+    .body {
+        padding: 20px;
+        @include smartTopMargin();
+    }
+}

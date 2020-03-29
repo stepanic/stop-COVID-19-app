@@ -48,6 +48,125 @@
 			}
 		}
 	},
+	"EXPLANATION": {
+		"CHILLS_SHAKING_PAIN-IN-MUSCLES_EXHAUSTION": {
+			"BODY": {
+				"0": {
+					"text": "<h2>Što je zimica?</h2>"
+				},
+				"1": {
+					"text": "<p>Zimica je osjećaj hladnoće u tijelu bez jasnog vanjskog uzroka.</p>"
+				},
+				"2": {
+					"text": "<h2>Što je tresavica?</h2>"
+				},
+				"3": {
+					"text": "<p>Tresavica je nevoljno drhtanje cijelog tijela.</p>"
+				},
+				"4": {
+					"text": "<h2>Bolovi u mišićima?</h2>"
+				},
+				"5": {
+					"text": "<p>Pod bolovima u mišićima podrazumijeva se osjećaj bolova svih mišića, naročito onih za pokretanje ili mišićima očiju.</p>"
+				},
+				"6": {
+					"text": "<h2>Što je iznemoglost?</h2>"
+				},
+				"7": {
+					"text": "<p>Pod iznemoglošću podrazumijeva se osjećaj opće slabosti do te mjere da pri obavljanju svakodnevnih poslova se pojavljuje osjećaj umora.</p>"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Dodatno pojašnjenje"
+				}
+			}
+		},
+		"CLOSE-CONTACT": {
+			"BODY": {
+				"0": {
+					"text": "<h2>Bliski kontakt uključuje sljedeće</h2>"
+				},
+				"1": {
+					"text": "<p>&bull; <b>Dijeljenje zajedničkog kućanstva</b> s oboljelim od COVID-19</p>"
+				},
+				"2": {
+					"text": "<p>&bull; <b>Izravan tjelesni kontakt</b> s oboljelim od COVID-19 (npr. rukovanje, poljubac, spolni odnos i sl.)</p>"
+				},
+				"3": {
+					"text": "<p>&bull; <b>Nezaštićen izravan kontakt s infektivnim izlučevinama</b> oboljelog od COVID-19 (dodirivanje korištenih maramica golom rukom, rublje i sl.)</p>"
+				},
+				"4": {
+					"text": "<p>&bull; <b>Boravak u zatvorenom prostoru</b> (npr. učionica, soba za sastanke, čekaonica u zdravstvenoj ustanovi itd.) s COVID-19 bolesnikom</p>"
+				},
+				"5": {
+					"text": "<p>&bull; Zdravstveni radnik ili druga <b>osoba koja pruža izravnu njegu</b> oboljelom od COVID-19 ili laboratorijsko osoblje koje rukuje s uzorcima oboljelog <b>bez korištenja preporučene osobne zaštite</b> (OZO) ili ako je došlo do propusta u korištenju OZO</p>"
+				},
+				"6": {
+					"text": "<p>&bull; <b>Kontakt u</b> zrakoplovu ili drugom <b>prijevoznom sredstvu</b> s bolesnikom dva metra ispred, iza, ili sa strane na udaljenosti od jedan metar, osobljem koje je posluživalo u tom dijelu zrakoplova, te bliskim kontaktima (putnici cijelog odjeljka ili cijelog zrakoplova).</p>"
+				},
+				"7": {
+					"text": "<p>Izvor: <b>HZJZ</b></p>"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Bliski kontakt"
+				}
+			}
+		},
+		"COMMUNITY": {
+			"BODY": {
+				"0": {
+					"text": "<h2>Pod zajednicom se podrazumijeva</h2>"
+				},
+				"1": {
+					"text": "<p>&bull; članovi domaćinstva</p>"
+				},
+				"2": {
+					"text": ""
+				},
+				"3": {
+					"text": "<p>&bull; polaznici razreda ili grupe</p>"
+				},
+				"4": {
+					"text": "<p>&bull; članovi radnog kolektiva<p>"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Zajednica"
+				}
+			}
+		},
+		"RESPIRATORY-PROBLEMS": {
+			"BODY": {
+				"0": {
+					"text": "<h2>Dišne tegobe podrazumijevaju</h2>"
+				},
+				"1": {
+					"text": "<p>&bull; kašalj</p>"
+				},
+				"2": {
+					"text": "<p>&bull; kihanje</p>"
+				},
+				"3": {
+					"text": "<p>&bull; bol u grlu</p>"
+				},
+				"4": {
+					"text": "<p>&bull; kratkoća daha (zaduha)</p>"
+				},
+				"5": {
+					"text": "<p>&bull; gubitak osjeta i njuha</p>"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Dišne tegobe"
+				}
+			}
+		}
+	},
 	"HOME": {
 		"HELLO": "",
 		"TITLE": {
