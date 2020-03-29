@@ -8,11 +8,12 @@ import { SharedModule } from '../shared.module';
 import { QuestionsPageComponent } from './questions-page/questions-page.component';
 import { BlocksModule } from '../blocks/blocks.module';
 import { ExplanationPageComponent } from './explanation-page/explanation-page.component';
+import { AboutPageComponent } from './about-page/about-page.component';
 
 
 
 @NgModule({
-  declarations: [HomePageComponent, TermsPageComponent, QuestionsPageComponent, ExplanationPageComponent],
+  declarations: [HomePageComponent, TermsPageComponent, QuestionsPageComponent, ExplanationPageComponent, AboutPageComponent],
   imports: [
     CommonModule,
     SharedModule,

@@ -1,0 +1,22 @@
+@import '../../../mixins.scss';
+
+.about-page-wrapper {
+
+    .container {
+        @include smartTopPadding();
+
+        .app-main-banner-wrapper {
+            // margin-top: 20px;
+        }
+
+        .body {
+            padding: 20px;
+
+            text-align: center;
+
+            
+        }
+    }
+
+
+}

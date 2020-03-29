@@ -2,8 +2,13 @@
 
 .explanation-page-wrapper {
 
+    display: flex;
+    flex-direction: column;
+    @include niceMinHeight();
+    @include smartTopPadding();
+    
     .body {
+        // @include smartTopMargin(); // DO NOT PUT MARGIN ANYWHERE HERE
         padding: 20px;
-        @include smartTopMargin();
     }
 }

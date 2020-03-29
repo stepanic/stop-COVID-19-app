@@ -1,11 +1,15 @@
 <div class="explanation-page-wrapper">
     
     <app-bar-leaf [title]="title" class="fixed-top"></app-bar-leaf>
-
+    
     <div class="body" >
         <ng-container *ngFor="let item of body" >
             <span [innerHTML]="item.text"></span>
         </ng-container>
     </div>
+
+    <div class="flex-spacer"></div>
+
+    <app-main-banner></app-main-banner>
 
 </div>

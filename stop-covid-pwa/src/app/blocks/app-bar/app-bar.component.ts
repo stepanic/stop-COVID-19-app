@@ -19,7 +19,7 @@ export class AppBarComponent implements OnInit, OnDestroy {
 
   public queryXSmall: MediaQueryList;
 
-  public isLangChangerEnabled = true; // When english translation will be full, put this to `true`
+  public isLangChangerEnabled = environment.multiLanguage.enabled; // When english translation will be full, put this to `true`
 
   constructor(
     private appBarService: AppBarService,

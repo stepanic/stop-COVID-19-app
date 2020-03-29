@@ -27,7 +27,8 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     HttpClientModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'en',
+      // defaultLanguage: 'en',
+      defaultLanguage: environment.multiLanguage.enabled ? 'en' : 'hr',
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),

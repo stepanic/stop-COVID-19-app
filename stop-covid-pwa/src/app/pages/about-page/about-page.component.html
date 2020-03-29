@@ -1,0 +1,29 @@
+<div class="about-page-wrapper">
+    
+    <!-- <app-bar-leaf [title]="title" ></app-bar-leaf> -->
+    <app-bar-leaf [title]="title" class="fixed-top"></app-bar-leaf>
+    
+    <div class="container" >
+        
+        
+        <div class="body" >
+            
+            <!-- <router-outlet></router-outlet> -->
+
+            <app-intro *ngIf="path === 'uvod'"></app-intro>
+            <app-about-authors *ngIf="path === 'o-autorima'"></app-about-authors>
+            <app-about-app *ngIf="path === 'o-aplikaciji'"></app-about-app>
+            <app-about-covid19 *ngIf="path === 'osnovno-COVID-19'"></app-about-covid19>
+            <app-about-covid19-symptoms *ngIf="path === 'simptomi-COVID-19'"></app-about-covid19-symptoms>
+            <app-about-general-hygiene *ngIf="path === 'opce-higijenske-mjere'"></app-about-general-hygiene>
+
+        </div>
+
+        <div class="app-main-banner-wrapper" >
+            <!-- <app-main-banner [mode]="'simple'"></app-main-banner> -->
+            <app-main-banner></app-main-banner>
+        </div>
+
+    </div>
+    
+</div>

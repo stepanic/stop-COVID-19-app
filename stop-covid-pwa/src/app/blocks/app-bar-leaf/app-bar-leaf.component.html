@@ -1,7 +1,10 @@
 <div class="app-bar-leaf-wrapper" >
     <mat-toolbar color="primary">
         <mat-toolbar-row>
-            <a mat-icon-button [routerLink]="[returnPath]" >
+            <a mat-icon-button [routerLink]="[returnPath]" *ngIf="returnPath" >
+                <mat-icon class="example-icon" aria-hidden="false" aria-label="Back">arrow_back</mat-icon>
+            </a>
+            <a mat-icon-button (click)="back()" *ngIf="!returnPath" >
                 <mat-icon class="example-icon" aria-hidden="false" aria-label="Back">arrow_back</mat-icon>
             </a>
             <span>{{ title }}</span>

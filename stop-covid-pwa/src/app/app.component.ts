@@ -3,6 +3,7 @@ import { StorageMap } from '@ngx-pwa/local-storage';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { take } from 'rxjs/operators';
 import { Title, Meta } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -24,11 +25,15 @@ export class AppComponent {
   private setupTranslations() {
 
     // this.translate.addLangs(['hr', 'en', 'de', 'fr']);
-    this.translate.addLangs(['hr', 'en']);
+    if (environment.multiLanguage.enabled) {
+      this.translate.addLangs(['hr', 'en']);
+    } else {
+      this.translate.addLangs(['hr']);
+    }
     // this.translate.addLangs(['hr']); // it is not possible have only hr becasue en is default
 
     // this language will be used as a fallback when a translation isn't found in the current language
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang(environment.multiLanguage.enabled ? 'en' : 'hr');
 
     // If already set in localStorage use this value
     this.storage.get('lang').pipe(take(1)).subscribe((lang: string) => {

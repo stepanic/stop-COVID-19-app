@@ -1,14 +1,17 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <!-- TODO: translate [routerLink] -->
+        <a mat-icon-button [routerLink]="(questionId > 1) ? (['/', 'pitanje', (questionId - 1)]) : ['/uvjeti']" >
+            <mat-icon class="example-icon" aria-hidden="false" aria-label="Back">arrow_back</mat-icon>
+        </a>
+        <div class="flex-spacer"></div>
+        <span>{{ 'CONFIG.QUESTION.TITLE.text' | translate }} {{ questionId }}/{{ howManyQuestions }}</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
 <div class="questions-page-wrapper">
 
-    <mat-toolbar>
-        <mat-toolbar-row>
-            <a mat-icon-button [routerLink]="(questionId > 1) ? (['/', 'pitanje', (questionId - 1)]) : ['/']" >
-                <mat-icon class="example-icon" aria-hidden="false" aria-label="Back">arrow_back</mat-icon>
-            </a>
-            <div class="flex-spacer"></div>
-            <span>Pitanje {{ questionId }}/{{ howManyQuestions }}</span>
-        </mat-toolbar-row>
-    </mat-toolbar>
 
     <app-question [id]="questionId" (changeAnswerChoice)="onChangeAnswerChoice($event)"></app-question>
 
@@ -28,7 +31,7 @@
         </div>
         
         <div class="answers" *ngIf="answerConfig.type === AnswerType.MULTIPLE" >
-            <button mat-raised-button class="answer multiple submit" (click)="answer(AnswerType.MULTIPLE)">{{ answerConfig.submit.tid | translate }} 	&rarr;</button>
+            <button mat-raised-button class="answer multiple submit" (click)="answer(AnswerType.MULTIPLE)">{{ answerConfig.submit.tid | translate }} &rarr;</button>
         </div>
     </div>
 

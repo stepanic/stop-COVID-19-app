@@ -13,6 +13,16 @@
         align-items: center;
         padding: 40px 0;
 
+        &.simple {
+            background-color: unset;
+            @media screen and (max-width: 600px) {
+                padding: 10px 0;
+                img {
+                    max-height: 30px;
+                }
+            }
+        }
+
         @media screen and (max-width: 600px) and (orientation: landscape) {
             // background-color: transparent;
             display: none;

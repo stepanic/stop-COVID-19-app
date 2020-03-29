@@ -29,7 +29,8 @@ export class AppBarLeafComponent implements OnInit {
     }
 
     if (!this.returnPath) {
-      this.returnPath = '/'; // Default return to home
+      // this.returnPath = '/'; // Default return to home
+      this.returnPath = null; // In context of app it is much better to window.history.back() by default
     }
   }
 

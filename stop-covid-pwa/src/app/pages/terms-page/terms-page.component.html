@@ -1,1 +1,25 @@
-<p>terms-page works!</p>
+<div class="terms-page-wrapper">
+
+    <p>
+        Slažete li se da želite pristupiti upitniku koji se sastoji od <b>niza</b> specifičnih pitanja, na temelju kojih će se procijeniti vjerojatnost da ste zaraženi sa SARS-CoV-2, odnosno COVID-19 i dati Vam preporuka za daljnje postupanje?
+    </p>
+
+    <div class="flex-spacer"></div>
+
+    <a mat-raised-button 
+       color="primary" 
+       [routerLink]="['/uvod']"
+       class="intro-link" >Pročitajte uvod</a>
+
+    <a mat-raised-button 
+       color="primary" 
+       [routerLink]="['/pitanje/1']"
+       class="agree-link" >Slažem se &rarr; Pristupi upitniku</a>
+
+    <div class="footer">
+        <h3>NAPOMENA</h3>
+        <p>
+            Odgovori se ne spremaju nigdje izvan memorije internet preglednika, ali po završetku upitnika moguće je offline generirati PDF datoteku s imenom i prezimenom sa ciljem jednostavnijeg informiranja epidemiologa, liječnika obiteljske medicine i eventualno samotrijaže.
+        </p>
+    </div>
+</div>

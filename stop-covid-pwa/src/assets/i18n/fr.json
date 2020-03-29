@@ -14,13 +14,28 @@
 					"link": "",
 					"text": ""
 				},
+				"ABOUT_COVID-19_SYMPTOMS": {
+					"link": "",
+					"text": ""
+				},
 				"GENERAL_HYGIENE_MEASURES": {
+					"link": "",
+					"text": ""
+				},
+				"HOME": {
+					"text": ""
+				},
+				"INTRO": {
 					"link": "",
 					"text": ""
 				},
 				"QUESTIONNAIRE": {
 					"link": "",
 					"text": "Questionnaire"
+				},
+				"TERMS": {
+					"link": "",
+					"text": ""
 				}
 			}
 		},
@@ -45,6 +60,9 @@
 						}
 					}
 				}
+			},
+			"TITLE": {
+				"text": ""
 			}
 		}
 	},

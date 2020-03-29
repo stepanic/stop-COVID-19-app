@@ -14,13 +14,28 @@
 					"link": "/osnovno-COVID-19",
 					"text": "Osnovno o bolesti COVID-19"
 				},
+				"ABOUT_COVID-19_SYMPTOMS": {
+					"link": "/simptomi-COVID-19",
+					"text": "COVID-19 simptomi"
+				},
 				"GENERAL_HYGIENE_MEASURES": {
 					"link": "/opce-higijenske-mjere",
 					"text": "Opće higijenske mjere"
 				},
+				"HOME": {
+					"text": "Naslovnica"
+				},
+				"INTRO": {
+					"link": "/uvod",
+					"text": "Uvod"
+				},
 				"QUESTIONNAIRE": {
 					"link": "/pitanje/1",
 					"text": "Upitnik"
+				},
+				"TERMS": {
+					"link": "/uvjeti",
+					"text": "Uvjeti korištenja"
 				}
 			}
 		},
@@ -28,7 +43,7 @@
 			"text": "Aplikacija je jednostavan upitnik za uzimanje anamneze osoba potencijalno inficiranih sa COVID-19."
 		},
 		"TITLE": {
-			"text": "eAnamneza"
+			"text": "eTrijaža"
 		}
 	},
 	"CONFIG": {
@@ -45,6 +60,9 @@
 						}
 					}
 				}
+			},
+			"TITLE": {
+				"text": "Pitanje"
 			}
 		}
 	},

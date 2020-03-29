@@ -1,0 +1,30 @@
+@import '../../../variables.scss';
+@import '../../../mixins.scss';
+
+.terms-page-wrapper {
+
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    @include niceMinHeight(40px);
+    
+    // background-color: pink;
+
+    .intro-link {
+        margin: 20px 0;
+        background-color: white;
+        color: black;
+    }
+    
+    .agree-link {
+        margin: 20px 0;
+        background-color: $colorSuccess;
+    }
+
+    .footer {
+        p {
+            font-size: 0.75em;
+        }
+    }
+}

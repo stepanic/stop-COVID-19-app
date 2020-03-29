@@ -5,20 +5,18 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: 0px;
     margin: 0;
-
+    
     // background-color: red;
-
-    @media screen and (max-width: 600px) {
-        
-        justify-content: space-between;
+    @include niceMinHeight(52px);
+    
+    @media screen and (min-width: 600px) {
+        justify-content: space-evenly;
+        @include niceMinHeight(64px);
     }
-
-    // @include niceMinHeight(40px);
-    @include niceMinHeight();
 
     app-question {
 

@@ -1,0 +1,15 @@
+@import '../../../variables.scss';
+
+.about-app-wrapper {
+
+    text-align: left;
+
+    a {
+        font-weight: bold;
+    }
+
+    .highlighted {
+        color: $colorDanger;
+        font-weight: bold;
+    }
+}

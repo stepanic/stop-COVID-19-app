@@ -7,6 +7,8 @@ import { MainLayoutComponent } from '../layouts/main-layout/main-layout.componen
 import { QuestionsPageComponent } from './questions-page/questions-page.component';
 import { ExplanationPageComponent } from './explanation-page/explanation-page.component';
 import { LeafLayoutComponent } from '../layouts/leaf-layout/leaf-layout.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { IntroComponent } from '../content/intro/intro.component';
 
 const OR = (url: UrlSegment[], paths: string[], level = 0): UrlMatchResult => {
 
@@ -58,8 +60,8 @@ const routes: Routes = [
         component: TermsPageComponent,
         data: {
           title: {
-            hr: 'Uvjeti naslov',
-            en: 'Terms title'
+            hr: 'Uvjeti',
+            en: 'Terms'
           }
         }
       },
@@ -81,6 +83,40 @@ const routes: Routes = [
     path: '',
     component: LeafLayoutComponent,
     children: [
+      // {
+      //   path: '',
+      //   component: AboutPageComponent,
+      //   children: [
+      //     {
+      //       path: 'uvod',
+      //       component: IntroComponent
+      //     }
+      //   ]
+      // },
+      {
+        matcher: (url: UrlSegment[]): UrlMatchResult => {
+          return OR(url, [
+            'intro',
+            'uvod',
+
+            'about-authors',
+            'o-autorima',
+
+            'about-app',
+            'o-aplikaciji',
+
+            'general-hygiene-measures',
+            'opce-higijenske-mjere',
+
+            'osnovno-COVID-19',
+            'about-COVID-19',
+
+            'simptomi-COVID-19',
+            'about-COVID-19-symptoms'
+          ]);
+        },
+        component: AboutPageComponent
+      },
       {
         path: 'pojasnjenje',
 

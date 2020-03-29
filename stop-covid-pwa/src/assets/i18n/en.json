@@ -14,13 +14,28 @@
 					"link": "/about-COVID-19",
 					"text": "About COVID-19 disease"
 				},
+				"ABOUT_COVID-19_SYMPTOMS": {
+					"link": "/symptoms-COVID-19",
+					"text": "COVID019 symptoms"
+				},
 				"GENERAL_HYGIENE_MEASURES": {
 					"link": "/general-hygiene-measures",
 					"text": "General hygiene measures"
 				},
+				"HOME": {
+					"text": "Home"
+				},
+				"INTRO": {
+					"link": "/intro",
+					"text": "Introduction"
+				},
 				"QUESTIONNAIRE": {
 					"link": "/question/1",
 					"text": "Questionnaire"
+				},
+				"TERMS": {
+					"link": "/terms",
+					"text": "Terms of use"
 				}
 			}
 		},
@@ -45,6 +60,9 @@
 						}
 					}
 				}
+			},
+			"TITLE": {
+				"text": "Question"
 			}
 		}
 	},
@@ -58,7 +76,7 @@
 					"text": "<p>Chills is a feeling of coldness in the body without a clear external cause.</p>"
 				},
 				"2": {
-					"text": "<h2>What is shaking?</h2>"
+					"text": "<h2>What is tremor?</h2>"
 				},
 				"3": {
 					"text": "<p>A tremor is an involuntary shaking of the whole body.</p>"
@@ -211,11 +229,11 @@
 		},
 		"Q08": {
 			"0": {
-				"text": "Do you have"
+				"text": "Do you have "
 			},
 			"1": {
 				"link": "/explanation/shaking-chills-pain-in-muscles-exhaustion",
-				"text": "<b>chills, tremors, muscle aches and / or fatigue</b>"
+				"text": "<b>chills, tremors, muscle aches and / or exhaustion</b>"
 			},
 			"2": {
 				"text": "?"
