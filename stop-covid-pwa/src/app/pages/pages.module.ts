@@ -10,11 +10,13 @@ import { BlocksModule } from '../blocks/blocks.module';
 import { ExplanationPageComponent } from './explanation-page/explanation-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ResultPageComponent } from './result-page/result-page.component';
+import { ResultSavePageComponent } from './result-save-page/result-save-page.component';
+import { ResultSummaryPageComponent } from './result-summary-page/result-summary-page.component';
 
 
 
 @NgModule({
-  declarations: [HomePageComponent, TermsPageComponent, QuestionsPageComponent, ExplanationPageComponent, AboutPageComponent, ResultPageComponent],
+  declarations: [HomePageComponent, TermsPageComponent, QuestionsPageComponent, ExplanationPageComponent, AboutPageComponent, ResultPageComponent, ResultSavePageComponent, ResultSummaryPageComponent],
   imports: [
     CommonModule,
     SharedModule,

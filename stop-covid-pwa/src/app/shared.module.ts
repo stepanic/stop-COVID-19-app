@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 import { ContentModule } from './content/content.module';
@@ -27,7 +28,8 @@ const modules = [
   MatButtonModule,
   MatSidenavModule,
   MatListModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatInputModule
 ];
 
 @NgModule({

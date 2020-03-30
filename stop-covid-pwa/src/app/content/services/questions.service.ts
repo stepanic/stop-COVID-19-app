@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IAnswerConfigBinary, IAnswerConfigMultiple, AnswerType } from '../model/Answer';
+import { StorageMap } from '@ngx-pwa/local-storage';
 
 const BINARY_ANSWER: IAnswerConfigBinary = {
   type: AnswerType.BINARY,
@@ -39,7 +40,7 @@ const ANSWERS_CONFIG = {
 })
 export class QuestionsService {
 
-  constructor() { }
+  constructor(private storage: StorageMap) { }
 
   /**
    * Get translation ID from question ID
@@ -68,5 +69,14 @@ export class QuestionsService {
 
   public get howManyQuestions() {
     return Object.keys(this.answersConfig).length;
+  }
+
+  /**
+   * Erase all collected data
+   */
+  public erase() {
+
+    this.storage.clear();
+    console.log('QuestionsService.erase');
   }
 }

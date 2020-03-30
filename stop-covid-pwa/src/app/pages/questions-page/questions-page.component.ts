@@ -56,6 +56,10 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
     const nextQuestionId = Math.min(this.questionId + 1, this.howManyQuestions);
     this.router.navigate(['/', 'pitanje', nextQuestionId]);
 
+    if (nextQuestionId === this.howManyQuestions) {
+      this.router.navigate(['/', 'rezultati', 'oprez', 'srednji']);
+    }
+
   }
 
   /**

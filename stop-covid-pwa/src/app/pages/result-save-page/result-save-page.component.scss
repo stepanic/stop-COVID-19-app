@@ -1,0 +1,33 @@
+@import '../../../variables.scss';
+
+.result-save-page-wrapper {
+
+    padding: 20px;
+
+    .input-field {
+        width: 100%;
+    }
+
+    a, button {
+        width: 100%;
+
+        max-width: 600px;
+
+        &.action-danger {
+            background-color: $colorError;
+            color: white;
+        }
+
+        &.action-success {
+            background-color: $colorOperational;
+            // background-color: $colorSuccess;
+            color: white;
+        }
+
+        .action-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

@@ -10,6 +10,8 @@ import { LeafLayoutComponent } from '../layouts/leaf-layout/leaf-layout.componen
 import { AboutPageComponent } from './about-page/about-page.component';
 import { IntroComponent } from '../content/intro/intro.component';
 import { ResultPageComponent } from './result-page/result-page.component';
+import { ResultSavePageComponent } from './result-save-page/result-save-page.component';
+import { ResultSummaryPageComponent } from './result-summary-page/result-summary-page.component';
 
 const OR = (url: UrlSegment[], paths: string[], level = 0): UrlMatchResult => {
 
@@ -84,6 +86,34 @@ const routes: Routes = [
       {
         path: 'results/caution/:cautionId', // EN
         component: ResultPageComponent,
+        data: {
+          lang: 'en'
+        }
+      },
+      {
+        path: 'rezultati/spremanje', // HR
+        component: ResultSavePageComponent,
+        data: {
+          lang: 'hr'
+        }
+      },
+      {
+        path: 'results/export', // HR
+        component: ResultSavePageComponent,
+        data: {
+          lang: 'en'
+        }
+      },
+      {
+        path: 'rezultati/preuzimanje', // HR
+        component: ResultSummaryPageComponent,
+        data: {
+          lang: 'hr'
+        }
+      },
+      {
+        path: 'results/download', // EN
+        component: ResultSummaryPageComponent,
         data: {
           lang: 'en'
         }
