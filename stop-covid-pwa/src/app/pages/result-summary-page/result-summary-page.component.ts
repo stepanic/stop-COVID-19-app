@@ -96,12 +96,12 @@ export class ResultSummaryPageComponent implements OnInit {
     //  Scroll to top to have nice rendering without strange top margin
     window.scrollTo(0, 0);
 
-    // Wait 2 seconds until the whole HTML is rendered
+    // Wait 4 seconds until the whole HTML is rendered
     setTimeout(() => {
       // tslint:disable-next-line: max-line-length
       const filename = `eTrijaza - Anamnestički obrazac COVID-19 - ${this.headerData.firstAndLastName} - ${this.headerData.dateTimeNow}.png`;
       this.screenshotService.download('.result-summary-page-wrapper', filename);
-    }, 2000);
+    }, 4000);
   }
 
 }

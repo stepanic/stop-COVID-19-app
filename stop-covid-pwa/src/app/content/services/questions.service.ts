@@ -323,6 +323,9 @@ export class QuestionsService {
       return CautionLevel.LOW;
     }
 
+    // Default
+    return CautionLevel.HIGH;
+
   }
 
   /**
