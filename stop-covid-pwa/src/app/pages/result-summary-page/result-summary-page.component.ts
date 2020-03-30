@@ -93,16 +93,15 @@ export class ResultSummaryPageComponent implements OnInit {
     this.results = await this.questionsService.getAnswers();
     this.cautionLevel = await this.questionsService.getCurrentCautionLevel();
 
-    //  Scroll to top to have nice rendering without strange top margin
-    window.scrollTo(0, 0);
-
-    // Wait 4 seconds until the whole HTML is rendered
+    // Wait 0.5 seconds until the whole HTML is rendered
     setTimeout(() => {
+      //  Scroll to top to have nice rendering without strange top margin
+      window.scrollTo(0, 0);
       // tslint:disable-next-line: max-line-length
       // const filename = `eTrijaza - Anamnestički obrazac COVID-19 - ${this.headerData.firstAndLastName} - ${this.headerData.dateTimeNow}.png`;
       const filename = `eTrijaza-UPITNIK.png`;
       this.screenshotService.download('.result-summary-page-wrapper', filename);
-    }, 4000);
+    }, 500);
   }
 
 }

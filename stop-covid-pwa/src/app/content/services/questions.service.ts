@@ -112,7 +112,7 @@ export class QuestionsService {
     // console.log('storeAnswer', answer);
 
     // disable save without value
-    if (!answer.value) {
+    if (!answer.value || Object.keys(answer.value).length === 0) {
       return;
     }
 

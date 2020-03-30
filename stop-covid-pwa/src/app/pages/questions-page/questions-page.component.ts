@@ -49,6 +49,7 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
    */
   public answer(type: AnswerType, value?: any) {
 
+    
     if (type === AnswerType.BINARY && value || type === AnswerType.MULTIPLE) {
       const answer = {
         questionId: this.questionId,
