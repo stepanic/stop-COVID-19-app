@@ -16,19 +16,14 @@ export class TermsPageComponent implements OnInit {
     private route: ActivatedRoute,
     private translate: TranslateService
   ) {
-
-    console.log('TermsPageComponent.constructor');
+    // console.log('TermsPageComponent.constructor');
     // this.appBarService.Title = 'Uvjeti page constructor';
   }
 
   ngOnInit(): void {
-    console.log('TermsPageComponent.ngOnInit');
-
+    // console.log('TermsPageComponent.ngOnInit');
     // this.appBarService.Title = 'Uvjeti page ngOnInit';
-
     const routeData = this.route.snapshot.data;
-    console.log('AppBarComponent.ngOnInit.routeData', routeData);
-
     this.appBarService.Title = routeData.title.hr + ' / ' + environment.app.bar.title.hr; // TODO: handle with
     // this.appBarService.Title = routeData.title[this.translate.currentLang];
   }

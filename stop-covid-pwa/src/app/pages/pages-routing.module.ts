@@ -31,7 +31,7 @@ const OR = (url: UrlSegment[], paths: string[], level = 0): UrlMatchResult => {
   //   }
   // }
 
-  console.log('matcher.OR', url);
+  // console.log('matcher.OR', url);
 
   // Classic Angular Router handling
   if (!url || !url.length) {
@@ -104,20 +104,7 @@ const routes: Routes = [
           lang: 'en'
         }
       },
-      {
-        path: 'rezultati/preuzimanje', // HR
-        component: ResultSummaryPageComponent,
-        data: {
-          lang: 'hr'
-        }
-      },
-      {
-        path: 'results/download', // EN
-        component: ResultSummaryPageComponent,
-        data: {
-          lang: 'en'
-        }
-      },
+      
       {
         path: '',
         component: HomePageComponent
@@ -218,6 +205,20 @@ const routes: Routes = [
             data: { tid: 'EXPLANATION.RESPIRATORY-PROBLEMS' }
           }
         ]
+      },
+      {
+        path: 'rezultati/preuzimanje', // HR
+        component: ResultSummaryPageComponent,
+        data: {
+          lang: 'hr'
+        }
+      },
+      {
+        path: 'results/download', // EN
+        component: ResultSummaryPageComponent,
+        data: {
+          lang: 'en'
+        }
       },
     ]
   }

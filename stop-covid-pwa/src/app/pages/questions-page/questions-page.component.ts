@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionsService } from 'src/app/content/services/questions.service';
 import { AnswerType, AnswerBinary } from 'src/app/content/model/Answer';
 import { Subscription } from 'rxjs';
+import { CautionLevel } from 'src/app/content/model/Caution';
 
 @Component({
   selector: 'app-questions-page',
@@ -48,11 +49,11 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
    */
   public answer(type: AnswerType, value?: any) {
 
-    if (value) {
+    if (type === AnswerType.BINARY && value || type === AnswerType.MULTIPLE) {
       const answer = {
         questionId: this.questionId,
         type,
-        value
+        value: value ? value : (type === AnswerType.MULTIPLE ? {} : null)
       };
 
       this.questionsService.storeAnswer(answer);
@@ -66,8 +67,7 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
 
     // After submited answer to last question redirect
     if (this.questionId === this.howManyQuestions) {
-      // TODO: detect caution and then redirect
-      this.router.navigate(['/', 'rezultati', 'oprez', 'srednji']);
+      this.navigateToCorrectCaution();
     }
 
   }
@@ -99,7 +99,7 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
     this.subscription.add(this.route.paramMap.subscribe(async (params) => {
       this.questionId = parseInt(params.get('questionId'), 10);
 
-      console.log('this.questionId', this.questionId);
+      // console.log('this.questionId', this.questionId);
 
       this.questionsService.getAnswer(this.questionId).then(answer => {
         // console.log('answer je', answer);
@@ -126,6 +126,34 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
 
   private setupQuestion() {
     this.answerConfig = this.questionsService.getAnswerConfig(this.questionId);
+  }
+
+  private async navigateToCorrectCaution() {
+
+      // Detect caution level from answered question
+      const cautionLevel = await this.questionsService.getCurrentCautionLevel();
+
+      // TODO: translate
+      let oprez: 'nizak' | 'srednji' | 'povecani' | 'kritican' = null;
+
+      switch (cautionLevel) {
+        case CautionLevel.LOW: {
+          oprez = 'nizak'; break;
+        }
+        case CautionLevel.MEDIUM: {
+          oprez = 'srednji'; break;
+        }
+        case CautionLevel.HIGH: {
+          oprez = 'povecani'; break;
+        }
+        case CautionLevel.CRITICAL: {
+          oprez = 'kritican'; break;
+        }
+      }
+
+      if (oprez) {
+        this.router.navigate(['/', 'rezultati', 'oprez', oprez]);
+      }
   }
 
 }

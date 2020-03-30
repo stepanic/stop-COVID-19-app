@@ -11,6 +11,7 @@ import { AboutGeneralHygieneComponent } from './about-general-hygiene/about-gene
 import { AboutCovid19Component } from './about-covid19/about-covid19.component';
 import { IntroComponent } from './intro/intro.component';
 import { AboutCovid19SymptomsComponent } from './about-covid19-symptoms/about-covid19-symptoms.component';
+import { ResultSummaryComponent } from './result-summary/result-summary.component';
 
 
 
@@ -23,6 +24,7 @@ import { AboutCovid19SymptomsComponent } from './about-covid19-symptoms/about-co
     AboutCovid19Component,
     AboutCovid19SymptomsComponent,
     IntroComponent,
+    ResultSummaryComponent,
   ],
   imports: [
     CommonModule,
@@ -37,7 +39,8 @@ import { AboutCovid19SymptomsComponent } from './about-covid19-symptoms/about-co
     AboutGeneralHygieneComponent,
     AboutCovid19Component,
     AboutCovid19SymptomsComponent,
-    IntroComponent
+    IntroComponent,
+    ResultSummaryComponent
   ]
 })
 export class ContentModule { }

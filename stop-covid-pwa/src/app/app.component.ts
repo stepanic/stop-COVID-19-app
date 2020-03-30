@@ -4,6 +4,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { take } from 'rxjs/operators';
 import { Title, Meta } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,17 @@ export class AppComponent {
     private translate: TranslateService,
     private storage: StorageMap,
     private titleService: Title,
-    private metaService: Meta
+    private metaService: Meta,
+    private router: Router
   ) {
+
+    // On every navigate scroll to top!
+    this.router.events.subscribe((evt) => {
+        if (!(evt instanceof NavigationEnd)) {
+            return;
+        }
+        window.scrollTo(0, 0);
+    });
 
     this.setupTranslations();
   }

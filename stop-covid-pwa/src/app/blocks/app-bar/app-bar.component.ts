@@ -30,7 +30,7 @@ export class AppBarComponent implements OnInit, OnDestroy {
 
     // Priority #2 - from appBarService
     this.title$ = this.appBarService.Title$.subscribe(title => {
-      console.log('AppBarComponent.Title', title);
+      // console.log('AppBarComponent.Title', title);
       this.title = title;
     });
   }

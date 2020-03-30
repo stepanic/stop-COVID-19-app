@@ -11,6 +11,7 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
 
   @Input() public id: string;
   @Input() public answer: any; // existing answer to prefill choices
+  @Input() public mode?: 'preview';
   @Output() public changeAnswerChoice = new EventEmitter<any>();
 
   public question: any;
@@ -28,7 +29,7 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+    // console.log(changes);
     if (changes.answer && !changes.answer.currentValue && !this.answer) {
       this.answer = {};
     }

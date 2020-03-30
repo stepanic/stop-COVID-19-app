@@ -1,0 +1,40 @@
+@import '../../../mixins.scss';
+
+app-bar-leaf {
+    z-index: 10000000;
+}
+
+.result-summary-page-wrapper {
+    padding: 20px;
+
+    &-rendering {
+        @include smartTopMargin();
+        padding: 20px;
+        // font-weight: bold;
+        margin-bottom: 10000px; // hide .result-summary-page-wrapper from viewport
+        display: none;
+
+        &.visible {
+            display: block;
+        }
+    }
+
+    &.rendering {
+        width: 400px; // to force show data inline
+        // font-size: 2em !important;
+        // line-height: 2em !important;
+    }
+
+    @include smartTopMargin();
+
+    .header-data {
+
+        border: 2px solid #DEE2E6;
+        border-radius: 0px;
+        border-left: none;
+        border-right: none;
+
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
+}

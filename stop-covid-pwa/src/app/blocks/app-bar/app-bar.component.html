@@ -31,14 +31,15 @@
                    <mat-icon matListIcon>home</mat-icon>
                    <h3 matLine>{{ 'APP.BAR.SIDENAV.HOME.text' | translate }}</h3>
                 </a>
-
+                
                 <mat-divider></mat-divider>
                 
                 <a mat-list-item 
-                   *ngFor="let part of ['INTRO', 'TERMS', 'QUESTIONNAIRE']" 
-                   (click)="snav.close()"
-                   [routerLink]="[ 'APP.BAR.SIDENAV.' + part + '.link' | translate ]" >
-                    {{ 'APP.BAR.SIDENAV.' + part + '.text' | translate }}
+                *ngFor="let part of ['INTRO', 'TERMS', 'QUESTIONNAIRE']" 
+                (click)="snav.close()"
+                [routerLink]="[ 'APP.BAR.SIDENAV.' + part + '.link' | translate ]" >
+                    <mat-icon matListIcon *ngIf="part === 'QUESTIONNAIRE'">device_unknown</mat-icon>
+                    <h3 matLine>{{ 'APP.BAR.SIDENAV.' + part + '.text' | translate }}</h3>
                 </a>
 
                 <mat-divider></mat-divider>

@@ -1,4 +1,36 @@
-<div class="result-summary-page-wrapper" >
+<app-bar-leaf [title]="title" class="fixed-top"></app-bar-leaf>
 
-    sve je tu
+<div class="result-summary-page-wrapper-rendering" >Preuzimanje u tijeku...</div>
+
+<div class="result-summary-page-wrapper" >
+    
+    <h1>eTrijaža @<a [href]="appOrigin" >{{ appHostName }}</a></h1>
+
+    <h2>Anamnestički obrazac procjene rizika i simptoma za COVID-19</h2>
+
+    <div class="header-data" *ngIf="headerData" >
+        <h3 *ngFor="let key of Object.keys(headerData)" >
+
+            <span *ngIf="key === 'firstAndLastName'" >
+                <b>Ime i prezime:</b>&nbsp;{{ headerData[key] }}
+            </span>
+
+            <span *ngIf="key === 'travelLocation' && headerData[key]" >
+                <b>Lokacija putovanja (grad/mjesto i država):</b>&nbsp;{{ headerData[key] }}
+            </span>
+
+            <span *ngIf="key === 'travelReturnDate' && headerData[key]" >
+                <b>Datum povratka s putovanja:</b>&nbsp;{{ headerData[key] }}
+            </span>
+
+            <span *ngIf="key === 'dateTimeNow' && headerData[key]" >
+                <b>Datum i vrijeme generiranja rezultata:</b>&nbsp;{{ headerData[key] }}
+            </span>
+    
+        </h3>
+
+    </div>
+
+    <app-result-summary [cautionLevel]="cautionLevel" [results]="results"></app-result-summary>
+
 </div>

@@ -12,26 +12,18 @@ export class HomePageComponent implements OnInit, OnDestroy {
   
   private subscription: Subscription = new Subscription();
 
-  public param = { value: 'svijet' };
-
   constructor(
     private appBarService: AppBarService,
     public translate: TranslateService
   ) {
-    this.appBarService.Title = 'Ovo je hoem title2';
-
-    
-
-    console.log(this.translate.currentLang);
-
+    // this.appBarService.Title = 'Ovo je home title';
+    // console.log(this.translate.currentLang);
     this.fetchTranslations();
-
   }
-  
 
   ngOnInit(): void {
   }
-  
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
@@ -39,9 +31,8 @@ export class HomePageComponent implements OnInit, OnDestroy {
   private fetchTranslations() {
     this.subscription.add(
       this.translate.stream('APP.TITLE.text').subscribe(appTitle => {
-        console.log(appTitle);
+        // console.log(appTitle);
         this.appBarService.Title = appTitle;
-
       })
     );
   }

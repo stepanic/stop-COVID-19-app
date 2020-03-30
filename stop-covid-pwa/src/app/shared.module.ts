@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 import { ContentModule } from './content/content.module';
+import { FormsModule } from '@angular/forms';
 
 const components = [];
 
@@ -18,6 +19,7 @@ const directives = [];
 const modules = [
   CommonModule,
   RouterModule,
+  FormsModule,
 
   TranslateModule,
 

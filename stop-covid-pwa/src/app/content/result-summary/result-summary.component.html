@@ -1,0 +1,47 @@
+<div class="result-summary-wrapper" >
+
+    <div class="caution-level" [class]="cautionLevel" >
+        <h2 *ngIf="cautionLevel === CautionLevel.LOW">NIZAK OPREZ</h2>
+        <h2 *ngIf="cautionLevel === CautionLevel.MEDIUM">SREDNJI OPREZ</h2>
+        <h2 *ngIf="cautionLevel === CautionLevel.HIGH">POVIŠENI OPREZ</h2>
+        <h2 *ngIf="cautionLevel === CautionLevel.CRITICAL">KRITIČAN OPREZ</h2>
+    </div>
+
+    <hr>
+
+    <h2>Vrsta potrebnih izolacijskih mjera</h2>
+
+    <p *ngIf="cautionLevel === CautionLevel.LOW">NIŠTA</p>
+    <p *ngIf="cautionLevel === CautionLevel.MEDIUM"><b>KONTAKTNI OPREZ</b></p>
+    <p *ngIf="cautionLevel === CautionLevel.HIGH || cautionLevel === CautionLevel.CRITICAL"><b>KAPLJIČNI i KONTAKTNI OPREZ!</b></p>
+
+    <hr>
+
+    <ng-container *ngFor="let result of results; let i = index" >
+        <ng-container *ngIf="result?.value">
+            <app-question [id]="result.questionId"
+                          [answer]="result.value"
+                          [mode]="'preview'" ></app-question>
+            <hr>
+        </ng-container>
+    </ng-container>
+
+    <h2>NAPOMENA</h2>
+
+    <p>
+        Ako ste neke od navedenih simptoma imali unatrag 14 dana obvezatno ih navedite zasebno u najavi ustanovi za koju imate trenutnu potrebu u poruci u kojoj šaljete
+        ovaj obrazac.
+    </p> 
+
+    <p *ngIf="cautionLevel === CautionLevel.HIGH || cautionLevel === CautionLevel.CRITICAL">
+        Ne zaboravite staviti masku preko lica!
+    </p>
+
+    <p>
+        Slanje ovog obrasca ne izuzima Vas ostalih mjera provjere zdravstvenog stanja prilikom pristupa ustanovi.
+    </p>
+
+    <p>
+        Procjena anamnestičkog rizika na zarazu SARS-CoV-2: nizak, srednji, povišeni ili kritičan.
+    </p>
+</div>

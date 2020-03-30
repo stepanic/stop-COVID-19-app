@@ -1,18 +1,29 @@
 <div class="question-wrapper" >
 
+    <span *ngIf="mode === 'preview'"><b>{{ id }}.</b>&nbsp;</span>
+
     <ng-container *ngFor="let part of question">
-        <span *ngIf="!part.link" [innerHTML]="part.text"></span>
-        <a *ngIf="part.link" [routerLink]="[ part.link ]" [state]="{ returnPath: currentPath }" >
+        <span *ngIf="!part.link || mode === 'preview'" [innerHTML]="part.text"></span>
+        <a *ngIf="part.link && mode !== 'preview'" [routerLink]="[ part.link ]" [state]="{ returnPath: currentPath }" >
             <span [innerHTML]="part.text"></span>
         </a>
     </ng-container>
     
-    <div class="answer-choices-wrapper" *ngIf="answerChoices" >
+    <div class="answer-choices-wrapper" [class]="mode" *ngIf="answerChoices" >
         <ng-container *ngFor="let choice of answerChoices">
             <div class="choice">
-                <mat-checkbox [value]="choice.text" [checked]="answer[choice.text]" (change)="onChangeAnswerChoice($event)">{{ choice.text }}</mat-checkbox>
+                <mat-checkbox [value]="choice.text" [disabled]="mode === 'preview'" [checked]="answer[choice.text]" (change)="onChangeAnswerChoice($event)">{{ choice.text }}</mat-checkbox>
             </div>
         </ng-container>
+    </div>
+
+    <!-- PREVIEW answer -->
+    <div class="answer-preview" *ngIf="mode === 'preview'" >
+        <div class="binary-answer" [class]="answer" *ngIf="answer === 'POSITIVE' || answer === 'NEGATIVE'" >
+            <!-- TODO: fetch config from QuestionsService -->
+            <span *ngIf="answer === 'POSITIVE'" >{{ 'CONFIG.QUESTION.ANSWER.TYPE.BINARY.NO' | translate }}</span>
+            <span *ngIf="answer === 'NEGATIVE'" >{{ 'CONFIG.QUESTION.ANSWER.TYPE.BINARY.YES' | translate }}</span>
+        </div>
     </div>
 </div>
 

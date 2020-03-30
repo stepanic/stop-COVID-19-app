@@ -63,6 +63,8 @@
             
             width: 100%;
 
+            padding-bottom: 70px; // NOTE: On iOS bottom toolbar hides actions
+
             .answer {
                 text-transform: uppercase;
                 color: white;

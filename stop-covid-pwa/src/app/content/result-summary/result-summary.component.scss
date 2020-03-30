@@ -1,0 +1,27 @@
+@import '../../../variables.scss';
+
+.result-summary-wrapper {
+
+    .caution-level {
+
+        padding-left: 10px;
+        background-color: #C4C4C4;
+
+        &.MEDIUM {
+            background-color: #FFD76F;
+        }
+
+        &.HIGH {
+            background-color: #FFB8B8;
+        }
+
+        &.CRITICAL {
+            background-color: $colorError;
+        }
+    }
+
+    hr {
+        border: 1px solid #DEE2E6;
+        border-radius: 0px;
+    }
+}
