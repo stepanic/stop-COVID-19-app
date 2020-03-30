@@ -42,6 +42,10 @@
     </p>
 
     <p>
-        Procjena anamnestičkog rizika na zarazu SARS-CoV-2: nizak, srednji, povišeni ili kritičan.
+        Procjena anamnestičkog rizika na zarazu SARS-CoV-2 je 
+        <span *ngIf="cautionLevel === CautionLevel.LOW">nizak</span>
+        <span *ngIf="cautionLevel === CautionLevel.MEDIUM">srednji</span>
+        <span *ngIf="cautionLevel === CautionLevel.HIGH">povišeni</span>
+        <span *ngIf="cautionLevel === CautionLevel.CRITICAL">kritičan</span>.
     </p>
 </div>
