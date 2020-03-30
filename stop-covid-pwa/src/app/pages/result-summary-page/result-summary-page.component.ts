@@ -99,7 +99,8 @@ export class ResultSummaryPageComponent implements OnInit {
     // Wait 4 seconds until the whole HTML is rendered
     setTimeout(() => {
       // tslint:disable-next-line: max-line-length
-      const filename = `eTrijaza - Anamnestički obrazac COVID-19 - ${this.headerData.firstAndLastName} - ${this.headerData.dateTimeNow}.png`;
+      // const filename = `eTrijaza - Anamnestički obrazac COVID-19 - ${this.headerData.firstAndLastName} - ${this.headerData.dateTimeNow}.png`;
+      const filename = `eTrijaza-UPITNIK.png`;
       this.screenshotService.download('.result-summary-page-wrapper', filename);
     }, 4000);
   }

@@ -3,7 +3,8 @@ export const environment = {
   app: {
     bar: {
       title: {
-        hr: 'eTrijaža' // NOTE: this is Proprity #3, look at AppBarComponent
+        hr: 'eTrijaža', // NOTE: this is Proprity #3, look at AppBarComponent
+        en: 'eTriage'
       }
     }
   },
