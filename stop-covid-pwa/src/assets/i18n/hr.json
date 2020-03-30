@@ -64,6 +64,11 @@
 			"TITLE": {
 				"text": "Pitanje"
 			}
+		},
+		"RESULTS": {
+			"TITLE": {
+				"text": "Rezultati"
+			}
 		}
 	},
 	"EXPLANATION": {

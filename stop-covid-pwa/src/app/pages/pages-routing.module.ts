@@ -9,6 +9,7 @@ import { ExplanationPageComponent } from './explanation-page/explanation-page.co
 import { LeafLayoutComponent } from '../layouts/leaf-layout/leaf-layout.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { IntroComponent } from '../content/intro/intro.component';
+import { ResultPageComponent } from './result-page/result-page.component';
 
 const OR = (url: UrlSegment[], paths: string[], level = 0): UrlMatchResult => {
 
@@ -72,6 +73,20 @@ const routes: Routes = [
       {
         path: 'question/:questionId', // EN
         component: QuestionsPageComponent
+      },
+      {
+        path: 'rezultati/oprez/:cautionId', // HR
+        component: ResultPageComponent,
+        data: {
+          lang: 'hr'
+        }
+      },
+      {
+        path: 'results/caution/:cautionId', // EN
+        component: ResultPageComponent,
+        data: {
+          lang: 'en'
+        }
       },
       {
         path: '',

@@ -9,11 +9,12 @@ import { QuestionsPageComponent } from './questions-page/questions-page.componen
 import { BlocksModule } from '../blocks/blocks.module';
 import { ExplanationPageComponent } from './explanation-page/explanation-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
+import { ResultPageComponent } from './result-page/result-page.component';
 
 
 
 @NgModule({
-  declarations: [HomePageComponent, TermsPageComponent, QuestionsPageComponent, ExplanationPageComponent, AboutPageComponent],
+  declarations: [HomePageComponent, TermsPageComponent, QuestionsPageComponent, ExplanationPageComponent, AboutPageComponent, ResultPageComponent],
   imports: [
     CommonModule,
     SharedModule,

@@ -5,7 +5,18 @@
     .lang-button {
         text-transform: uppercase;
     }
+
+    mat-toolbar {
+        
+    }
+
     mat-toolbar-row {
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
 
         background-color: black;
     
@@ -32,10 +43,18 @@
     .sidebar-container {
         
         @include niceMinHeight();
-    
+
+        
         mat-sidenav {
             
             mat-nav-list {
+
+                // When position:fixed is moved to 
+                // mat-toolbar-row then everyting works perfect
+                // DO NOT USE THIS HACK!
+                /*@media screen and (max-width: 959px) and (orientation: landscape) {
+                    margin-bottom: 100px; // HACK: to fix bug in material sidebar
+                }*/
                 
                 display: flex;
                 flex-direction: column;

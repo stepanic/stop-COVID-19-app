@@ -64,6 +64,11 @@
 			"TITLE": {
 				"text": "Question"
 			}
+		},
+		"RESULTS": {
+			"TITLE": {
+				"text": "Results"
+			}
 		}
 	},
 	"EXPLANATION": {

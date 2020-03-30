@@ -1,0 +1,87 @@
+@import '../../../variables.scss';
+
+.result-page-wrapper {
+
+    // background-color: white;
+
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-start;
+    // align-items: center;
+
+    .title, .critical-note {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        padding: 10px 20px;
+    }
+
+    .title {
+        width: 100%;
+
+        &.nizak, &.low {
+            background-color: #C4C4C4;
+        }
+
+        &.srednji, &.medium {
+            background-color: #FFD76F;
+        }
+
+        &.povecani, &.high {
+            background-color: #FFB8B8;
+        }
+
+        &.kritican, &.critical {
+            background-color: $colorError;
+        }
+    }
+
+    .critical-note {
+        background-color: black;
+        color: white;
+    }
+
+    .body {
+        padding: 20px;
+
+        max-width: 600px;
+
+        .highlighted {
+            color: $colorError;
+        }
+
+        a {
+            font-weight: bold;
+            color: $colorError;
+        }
+    }
+
+    .footer {
+
+        padding: 0 20px 20px 20px;
+
+        a, button {
+            width: 100%;
+
+            max-width: 600px;
+
+            &.action-danger {
+                background-color: $colorError;
+                color: white;
+            }
+
+            &.action-success {
+                background-color: $colorOperational;
+                // background-color: $colorSuccess;
+                color: white;
+            }
+
+            .action-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+}
