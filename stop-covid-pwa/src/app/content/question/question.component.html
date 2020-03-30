@@ -10,7 +10,7 @@
     <div class="answer-choices-wrapper" *ngIf="answerChoices" >
         <ng-container *ngFor="let choice of answerChoices">
             <div class="choice">
-                <mat-checkbox [value]="choice.text" (change)="onChangeAnswerChoice($event)">{{ choice.text }}</mat-checkbox>
+                <mat-checkbox [value]="choice.text" [checked]="answer[choice.text]" (change)="onChangeAnswerChoice($event)">{{ choice.text }}</mat-checkbox>
             </div>
         </ng-container>
     </div>

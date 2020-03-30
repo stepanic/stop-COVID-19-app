@@ -18,6 +18,9 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
 
   public questionId: number;
   public answerConfig: any;
+  public answerForCurrentQuestion: any;
+
+  public multipleChoicesAnswer: any;
 
   public howManyQuestions: number;
 
@@ -43,20 +46,27 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
    * @param type is type of the question
    * @param value is optional but it is passed for questions with binary answer, multiple choices answer is fetched async
    */
-  public answer(type: AnswerType, value?: AnswerBinary) {
+  public answer(type: AnswerType, value?: any) {
 
-    const answer = {
-      questionId: this.questionId,
-      type,
-      value
-    };
+    if (value) {
+      const answer = {
+        questionId: this.questionId,
+        type,
+        value
+      };
 
-    console.log(answer);
+      this.questionsService.storeAnswer(answer);
+    }
 
-    const nextQuestionId = Math.min(this.questionId + 1, this.howManyQuestions);
-    this.router.navigate(['/', 'pitanje', nextQuestionId]);
+    // Automatic to next question on binary answer
+    if (type === AnswerType.BINARY || type === AnswerType.MULTIPLE && !value) {
+      const nextQuestionId = Math.min(this.questionId + 1, this.howManyQuestions);
+      this.router.navigate(['/', 'pitanje', nextQuestionId]);
+    }
 
-    if (nextQuestionId === this.howManyQuestions) {
+    // After submited answer to last question redirect
+    if (this.questionId === this.howManyQuestions) {
+      // TODO: detect caution and then redirect
       this.router.navigate(['/', 'rezultati', 'oprez', 'srednji']);
     }
 
@@ -67,7 +77,17 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
    * @param answerChoice is object with new checked answer choice
    */
   public onChangeAnswerChoice(answerChoice) {
-    console.log('new ac', answerChoice);
+    // console.log('new ac', answerChoice);
+
+    const answer = {};
+    for (const choice of Object.entries(answerChoice)) {
+      if (choice[1]) {
+        answer[choice[0]] = true;
+      }
+    }
+
+    // DO NOT confirm answer here
+    this.answer(AnswerType.MULTIPLE, answer);
   }
 
   private initPage() {
@@ -76,8 +96,19 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
 
   private checkRoute() {
 
-    this.subscription.add(this.route.paramMap.subscribe(params => {
+    this.subscription.add(this.route.paramMap.subscribe(async (params) => {
       this.questionId = parseInt(params.get('questionId'), 10);
+
+      console.log('this.questionId', this.questionId);
+
+      this.questionsService.getAnswer(this.questionId).then(answer => {
+        // console.log('answer je', answer);
+        this.answerForCurrentQuestion = answer;
+      });
+
+      // this.multipleChoicesAnswer = await this.questionsService.getAnswer(this.questionId);
+
+      // console.log('this.multipleChoicesAnswer', this.multipleChoicesAnswer);
 
       if (isNaN(this.questionId) || this.questionId > this.howManyQuestions) {
         this.router.navigate(['/']);

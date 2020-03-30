@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IAnswerConfigBinary, IAnswerConfigMultiple, AnswerType } from '../model/Answer';
 import { StorageMap } from '@ngx-pwa/local-storage';
+import { take } from 'rxjs/operators';
 
 const BINARY_ANSWER: IAnswerConfigBinary = {
   type: AnswerType.BINARY,
@@ -67,8 +68,49 @@ export class QuestionsService {
     return ANSWERS_CONFIG;
   }
 
+  /**
+   * Count questions
+   */
   public get howManyQuestions() {
     return Object.keys(this.answersConfig).length;
+  }
+
+
+  /**
+   * Save answer
+   * @param answer is answer object 
+   */
+  public storeAnswer(answer) {
+    console.log('storeAnswer', answer);
+
+    // disable save without value
+    if (!answer.value) {
+      return;
+    }
+
+    // const type = answer.type;
+    const key = this.getAnswerKey(answer.questionId);
+
+    this.storage.set(key, answer).pipe(take(1)).subscribe();
+
+  }
+
+  /**
+   * Get current answer value by questionId
+   * @param questionId is question ideniticator
+   */
+  public getAnswer(questionId: number): Promise<any> {
+
+    const key = this.getAnswerKey(questionId);
+
+    // console.log(key);
+
+    return new Promise((resolve, reject) => {
+      this.storage.get(key).pipe(take(1)).subscribe(answer => {
+        resolve(answer);
+      });
+    });
+
   }
 
   /**
@@ -76,7 +118,17 @@ export class QuestionsService {
    */
   public erase() {
 
-    this.storage.clear();
+    // TODO: delete only everything starts with `ANSWER_` but not for example `lang`
+    this.storage.clear().pipe(take(1)).subscribe();
+
     console.log('QuestionsService.erase');
+  }
+
+  /**
+   * Get answer's key in store from questionId
+   * @param questionId is question ideniticator
+   */
+  private getAnswerKey(questionId: number): string {
+    return `ANSWER_Q${questionId.toString().padStart(2, '0')}`;
   }
 }

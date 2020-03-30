@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
 
   @Input() public id: string;
+  @Input() public answer: any; // existing answer to prefill choices
   @Output() public changeAnswerChoice = new EventEmitter<any>();
 
   public question: any;
@@ -27,8 +28,14 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.id = changes.id.currentValue;
-    this.reloadData();
+    console.log(changes);
+    if (changes.answer && !changes.answer.currentValue && !this.answer) {
+      this.answer = {};
+    }
+    if (changes.id) {
+      this.id = changes.id.currentValue;
+      this.reloadData();
+    }
   }
 
   ngOnDestroy(): void {
@@ -40,9 +47,8 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
    * @param changes is object with changes
    */
   public onChangeAnswerChoice(changes) {
-    const choice = {};
-    choice[changes.source.value] = changes.checked;
-    this.changeAnswerChoice.emit(choice);
+    this.answer[changes.source.value] = changes.checked;
+    this.changeAnswerChoice.emit(this.answer);
   }
 
   /**

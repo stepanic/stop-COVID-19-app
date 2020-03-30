@@ -13,7 +13,7 @@
 <div class="questions-page-wrapper">
 
 
-    <app-question [id]="questionId" (changeAnswerChoice)="onChangeAnswerChoice($event)"></app-question>
+    <app-question [id]="questionId" [answer]="answerForCurrentQuestion?.value" (changeAnswerChoice)="onChangeAnswerChoice($event)"></app-question>
 
     <app-main-banner></app-main-banner>
 
