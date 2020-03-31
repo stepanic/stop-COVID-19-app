@@ -200,6 +200,24 @@
 					"text": "Respiratory problems"
 				}
 			}
+		},
+		"SELF-ISOLATION": {
+			"BODY": {
+				"0": {
+					"text": ""
+				},
+				"1": {
+					"text": ""
+				},
+				"2": {
+					"text": ""
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": ""
+				}
+			}
 		}
 	},
 	"HOME": {
@@ -212,6 +230,13 @@
 		"Q01": {
 			"0": {
 				"text": "Are you in <b>self-isolation</b>?"
+			},
+			"1": {
+				"link": "",
+				"text": ""
+			},
+			"2": {
+				"text": ""
 			}
 		},
 		"Q02": {
@@ -301,6 +326,13 @@
 				"text": ""
 			},
 			"2": {
+				"text": ""
+			},
+			"3": {
+				"link": "",
+				"text": ""
+			},
+			"4": {
 				"text": ""
 			}
 		},

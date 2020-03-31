@@ -182,6 +182,11 @@ const routes: Routes = [
             path: 'kronicne-bolesti',
             component: ExplanationPageComponent,
             data: { tid: 'EXPLANATION.CHRONIC-DISEASES' }
+          },
+          {
+            path: 'samoizolacija',
+            component: ExplanationPageComponent,
+            data: { tid: 'EXPLANATION.SELF-ISOLATION' }
           }
         ]
       },

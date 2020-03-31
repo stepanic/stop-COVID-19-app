@@ -200,6 +200,24 @@
 					"text": "Dišne tegobe"
 				}
 			}
+		},
+		"SELF-ISOLATION": {
+			"BODY": {
+				"0": {
+					"text": "<h2>Što je samoizolacija (kućna karantena)?</h2>"
+				},
+				"1": {
+					"text": "<p>Samoizolacija je mjera zdravstvene zaštite kojom se zdrava osoba nakon što se izloži riziku od dobivanja zarazne bolesti (rizičan događaj) podvrgava režimu fizičkog odvajanja od zajednice (obično izdvojena prostorija) sa ciljem onemogućavanja bliskih kontakata s drugim ljudima sve dok traje mogućnost nastanka bolesti (inkubacija) kako bi se prekinuo lanac prijenosa zarazne bolesti i što ranije otkrio nastanak bolesti.  Osoba koja oboli zarazna je od samog početka bolesti, u vrijeme kada su simptomi blagi, a može biti zarazna i 1-2 dana prije početka bolesti. Svrha samoizolacija je da osoba u slučaju bolesti ima najmanji mogući broj kontakata s drugim ljudima u vrijeme zaraznosti. \n</p>"
+				},
+				"2": {
+					"text": "<h3 style-\"margin: 0; padding: 0\">Rizični događaji su:</h3>\n<div>\n&bull; osobni kontakt s osobom s oboljelom od ili sumnjom na oboljenje od  COVID 19.<br>\n&bull; boravak u području s visokom rizikom za zarazu koronavirusom COVID 19 bolest u posljednjih 14 dana\n</div>"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Samoizolacija"
+				}
+			}
 		}
 	},
 	"HOME": {
@@ -211,7 +229,14 @@
 	"QUESTION": {
 		"Q01": {
 			"0": {
-				"text": "Jeste li u <b>samoizolaciji</b>?"
+				"text": "Jeste li u "
+			},
+			"1": {
+				"link": "/pojasnjenje/samoizolacija",
+				"text": "<b>samoizolaciji</b>"
+			},
+			"2": {
+				"text": " (kućnoj karanteni)?"
 			}
 		},
 		"Q02": {
@@ -301,7 +326,14 @@
 				"text": "<b>bliskom</b>"
 			},
 			"2": {
-				"text": " <b>kontaktu</b> s <b>osobom pod mjerama samoizolacije</b>?"
+				"text": " <b>kontaktu</b> s <b>osobom pod mjerama</b> "
+			},
+			"3": {
+				"link": "/pojasnjenje/samoizolacija",
+				"text": "<b>samoizolacije</b>"
+			},
+			"4": {
+				"text": "?"
 			}
 		},
 		"Q13": {
