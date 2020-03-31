@@ -154,6 +154,21 @@
 				}
 			}
 		},
+		"CLOSE-CONTACT-BY-HZJZ": {
+			"BODY": {
+				"0": {
+					"text": "<h2>Bliski kontakt se definira kao</h2>"
+				},
+				"1": {
+					"text": "<p>a.) udaljenost od oko 2 metra i manje ili boravak u istom zatvorenom prostoru, ali dulje vrijeme, u trajanju dulje od 15 minuta (kod zdravstvenih djelatnika, kućnih kontakata, uključujući kontakt u zrakoplovu ili drugom prijevoznom sredstvu), a bez osobne zaštite opreme (rukavica, pregača, maska, zaštita za oči).</p>\n\n<p>ILI</p>\n\n<p>b.) direktan kontakt s kontaminiranim/infektivnim izlučevinama oboljelog od COVID-19 (npr. oboljeli je kašljao na nas, dodirivanje korištenih maramica, rukovanje ili drugi izravan tjelesni kontakt s oboljelim), a bez korištenje osobne zaštitne opreme. Do ovog trenutka bliskim kontaktom ne smatra se kratka interakcija s oboljelim, npr. prolazak pored ili hodanje uz oboljelu osobu.</p>\n\n<p>HZJZ obrazac za prijavu sumnje na COVID-19</p>"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Bliski kontakt"
+				}
+			}
+		},
 		"COMMUNITY": {
 			"BODY": {
 				"0": {

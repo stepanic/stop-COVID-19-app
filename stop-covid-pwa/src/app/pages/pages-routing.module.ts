@@ -166,7 +166,7 @@ const routes: Routes = [
           {
             path: 'bliski-kontakt',
             component: ExplanationPageComponent,
-            data: { tid: 'EXPLANATION.CLOSE-CONTACT' }
+            data: { tid: 'EXPLANATION.CLOSE-CONTACT-BY-HZJZ' }
           },
           {
             path: 'zajednica',

@@ -154,6 +154,21 @@
 				}
 			}
 		},
+		"CLOSE-CONTACT-BY-HZJZ": {
+			"BODY": {
+				"0": {
+					"text": ""
+				},
+				"1": {
+					"text": ""
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": ""
+				}
+			}
+		},
 		"COMMUNITY": {
 			"BODY": {
 				"0": {
