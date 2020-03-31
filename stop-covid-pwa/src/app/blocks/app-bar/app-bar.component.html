@@ -2,7 +2,7 @@
 
     <mat-toolbar color="primary" >
         <mat-toolbar-row >
-            <button mat-icon-button (click)="snav.toggle()" >
+            <button mat-icon-button (click)="snav.toggle(); scrollToTop()" >
                 <mat-icon class="" aria-hidden="false" aria-label="Menu"  >{{ snav.opened ? 'close' : 'menu' }}</mat-icon>
             </button>
             <!-- <a [routerLink]="['/']" (click)="snav.close()" > -->
