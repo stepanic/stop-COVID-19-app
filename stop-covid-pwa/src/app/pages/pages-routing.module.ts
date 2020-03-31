@@ -191,6 +191,17 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'upozorenje',
+        component: ExplanationPageComponent,
+        children: [
+          {
+            path: '',
+            component: ExplanationPageComponent,
+            data: { tid: 'EXPLANATION.WARNING' }
+          }
+        ]
+      },
+      {
         path: 'explanation',
         component: ExplanationPageComponent,
         children: [

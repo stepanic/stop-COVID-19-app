@@ -1,10 +1,9 @@
 <div class="main-banner-wrapper">
     <div class="main-banner" [ngClass]="{ simple: mode === 'simple' }" >
-        <!-- <a href="https://www.koronavirus.hr/" target="_blank" >
-        <a href="javascript:;" >
+        <a *ngIf="link" href="https://www.koronavirus.hr/" target="_blank" >
             <img src="/assets/main-banner.svg" >
-        </a> -->
-        <img src="/assets/main-banner.svg" >
+        </a>
+        <img *ngIf="!link" src="/assets/main-banner.svg" >
     </div>
 
 </div>

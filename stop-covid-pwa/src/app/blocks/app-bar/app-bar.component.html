@@ -45,7 +45,7 @@
                 <mat-divider></mat-divider>
 
                 <a mat-list-item 
-                   *ngFor="let part of ['GENERAL_HYGIENE_MEASURES', 'ABOUT_COVID-19', 'ABOUT_COVID-19_SYMPTOMS']" 
+                   *ngFor="let part of ['GENERAL_HYGIENE_MEASURES', 'WARNING', 'ABOUT_COVID-19', 'ABOUT_COVID-19_SYMPTOMS']" 
                    (click)="snav.close()"
                    [routerLink]="[ 'APP.BAR.SIDENAV.' + part + '.link' | translate ]" >
                     {{ 'APP.BAR.SIDENAV.' + part + '.text' | translate }}

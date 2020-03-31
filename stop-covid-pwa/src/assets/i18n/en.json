@@ -36,6 +36,10 @@
 				"TERMS": {
 					"link": "/terms",
 					"text": "Terms of use"
+				},
+				"WARNING": {
+					"link": "/warning",
+					"text": "Warning"
 				}
 			}
 		},
@@ -216,6 +220,31 @@
 			"HEAD": {
 				"TITLE": {
 					"text": ""
+				}
+			}
+		},
+		"WARNING": {
+			"BODY": {
+				"0": {
+					"text": ""
+				},
+				"1": {
+					"text": ""
+				},
+				"2": {
+					"text": ""
+				},
+				"3": {
+					"text": ""
+				},
+				"4": {
+					"link": "",
+					"text": ""
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Warning"
 				}
 			}
 		}

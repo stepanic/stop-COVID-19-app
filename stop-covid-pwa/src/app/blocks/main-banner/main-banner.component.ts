@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MainBannerComponent implements OnInit {
 
   @Input() mode: string;
+  @Input() link: boolean;
 
   constructor() { }
 

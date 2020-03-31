@@ -4,7 +4,8 @@
     
     <div class="body" >
         <ng-container *ngFor="let item of body" >
-            <span [innerHTML]="item.text"></span>
+            <span *ngIf="!item.link" [innerHTML]="item.text"></span>
+            <a *ngIf="item.link" [routerLink]="[item.link]" ><span [innerHTML]="item.text"></span></a>
         </ng-container>
     </div>
 

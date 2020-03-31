@@ -36,6 +36,10 @@
 				"TERMS": {
 					"link": "/uvjeti",
 					"text": "Uvjeti korištenja"
+				},
+				"WARNING": {
+					"link": "/upozorenje",
+					"text": "Upozorenje"
 				}
 			}
 		},
@@ -216,6 +220,31 @@
 			"HEAD": {
 				"TITLE": {
 					"text": "Samoizolacija"
+				}
+			}
+		},
+		"WARNING": {
+			"BODY": {
+				"0": {
+					"text": "<p>Ako imate ozbiljne poteškoće s disanjem u smislu kratkoće daha broj hitne pomoći je <b>112</b> ili <b>194</b></p>"
+				},
+				"1": {
+					"text": "<p>U pozivu obvezatno navedite da imate dišne tegobe te ako ste:</p>"
+				},
+				"2": {
+					"text": "<p><b>\n&bull; putovali izvan Hrvatske<br>\n\n                        <br>ili<br><br>\n\n&bull; bili u kontaktu s osobom oboljelom od COVID-19<br>\n\n                         <br>ili<br><br>\n</p>\n"
+				},
+				"3": {
+					"text": "<b>&bull; bili u kontaktu s osobom u </b>\n"
+				},
+				"4": {
+					"link": "/pojasnjenje/samoizolacija",
+					"text": "<b>samoizolaciji</b>"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Upozorenje"
 				}
 			}
 		}
