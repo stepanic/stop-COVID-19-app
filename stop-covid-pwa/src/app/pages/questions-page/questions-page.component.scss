@@ -11,7 +11,7 @@
     margin: 0;
     
     // background-color: red;
-    @include niceMinHeight(52px);
+    @include niceMinHeight(56px);
     
     @media screen and (min-width: 600px) {
         justify-content: space-evenly;
