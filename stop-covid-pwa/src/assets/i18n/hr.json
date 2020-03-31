@@ -105,6 +105,18 @@
 				}
 			}
 		},
+		"CHRONIC-DISEASES": {
+			"BODY": {
+				"0": {
+					"text": "&bull; krvožilne bolesti<br>&bull; povišen krvni tlak<br>&bull; šećerna bolest<br>&bull; bubrežna bolest<br>&bull; kronična opstruktivna bolest pluća<br>&bull; stanja/bolesti koji oslabljuju imunitet"
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Kronične bolesti"
+				}
+			}
+		},
 		"CLOSE-CONTACT": {
 			"BODY": {
 				"0": {

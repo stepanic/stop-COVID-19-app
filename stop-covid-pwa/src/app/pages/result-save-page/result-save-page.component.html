@@ -42,7 +42,7 @@
 
 
     <!-- TODO: translate routerLink -->
-    <a mat-raised-button [class]="{ disabled: !model.firstAndLastName || !model.travelLocation || !model.travelReturnDate }" [routerLink]="['/rezultati/preuzimanje']" class="action-success" style="margin-top: 10px;">
+    <a mat-raised-button [class]="{ disabled: !model.firstAndLastName || (isVisibleTravelData ? (!model.travelLocation || !model.travelReturnDate) : false) }" [routerLink]="['/rezultati/preuzimanje']" class="action-success" style="margin-top: 10px;">
         <div class="action-wrapper" >
             <span *ngIf="lang === 'hr'">STVORI i PREUZMI PNG</span>
             <span *ngIf="lang === 'en'">GENERATE &amp; DOWNLOAD PNG</span>

@@ -177,6 +177,11 @@ const routes: Routes = [
             path: 'disne-tegobe',
             component: ExplanationPageComponent,
             data: { tid: 'EXPLANATION.RESPIRATORY-PROBLEMS' }
+          },
+          {
+            path: 'kronicne-bolesti',
+            component: ExplanationPageComponent,
+            data: { tid: 'EXPLANATION.CHRONIC-DISEASES' }
           }
         ]
       },

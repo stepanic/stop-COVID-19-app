@@ -105,6 +105,18 @@
 				}
 			}
 		},
+		"CHRONIC-DISEASES": {
+			"BODY": {
+				"0": {
+					"text": ""
+				}
+			},
+			"HEAD": {
+				"TITLE": {
+					"text": "Chronic diseases"
+				}
+			}
+		},
 		"CLOSE-CONTACT": {
 			"BODY": {
 				"0": {
