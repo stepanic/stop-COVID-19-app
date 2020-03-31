@@ -204,7 +204,7 @@
 		"SELF-ISOLATION": {
 			"BODY": {
 				"0": {
-					"text": "<h2>Što je samoizolacija (kućna karantena)?</h2>"
+					"text": "<h2>Što je samoizolacija (kućna karantena)?</h2>\n<p>Izvor: <b>HZJZ</b>, pročitajte <a href=\"https://www.hzjz.hr/sluzba-epidemiologija-zarazne-bolesti/izolacija-tko-sve-treba-biti-u-njoj-i-pravila-koja-trebaju-postovati-ukucani-osobe-koja-je-izolaciji/\" target=\"_blank\" ><b>više</b></a>.</p>"
 				},
 				"1": {
 					"text": "<p>Samoizolacija je mjera zdravstvene zaštite kojom se zdrava osoba nakon što se izloži riziku od dobivanja zarazne bolesti (rizičan događaj) podvrgava režimu fizičkog odvajanja od zajednice (obično izdvojena prostorija) sa ciljem onemogućavanja bliskih kontakata s drugim ljudima sve dok traje mogućnost nastanka bolesti (inkubacija) kako bi se prekinuo lanac prijenosa zarazne bolesti i što ranije otkrio nastanak bolesti.  Osoba koja oboli zarazna je od samog početka bolesti, u vrijeme kada su simptomi blagi, a može biti zarazna i 1-2 dana prije početka bolesti. Svrha samoizolacija je da osoba u slučaju bolesti ima najmanji mogući broj kontakata s drugim ljudima u vrijeme zaraznosti. \n</p>"
