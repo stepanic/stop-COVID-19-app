@@ -48,8 +48,13 @@ export class ScreenshotService {
     html2canvas(element, {
       // scale: 4 // USE DEFAULT IS BEST
     }).then((canvas) => {
-      element.classList.remove('rendering');
-      renderingPlaceholderElement?.classList.remove('visible');
+
+      // TODO: move this UI logic out of this service!
+      // HIDE AFTER 10 SECONDS
+      setTimeout(() => {
+        element.classList.remove('rendering');
+        renderingPlaceholderElement?.classList.remove('visible');
+      }, 10000);
 
       // Store to file
       saveAs(canvas.toDataURL(), filename);
