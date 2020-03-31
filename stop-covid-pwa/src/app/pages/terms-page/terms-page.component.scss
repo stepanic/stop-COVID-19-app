@@ -3,6 +3,8 @@
 
 .terms-page-wrapper {
 
+    @include maxWidth600ForDesktop();
+
     padding: 20px;
     display: flex;
     flex-direction: column;

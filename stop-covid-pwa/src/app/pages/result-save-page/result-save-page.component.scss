@@ -8,10 +8,12 @@
         width: 100%;
     }
 
+    max-width: 600px;
+
     a, button {
         width: 100%;
 
-        max-width: 600px;
+        // max-width: 600px;
 
         &.disabled {
             opacity: .5;

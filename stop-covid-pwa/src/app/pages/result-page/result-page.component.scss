@@ -1,6 +1,9 @@
 @import '../../../variables.scss';
+@import '../../../mixins.scss';
 
 .result-page-wrapper {
+
+    overflow-x: hidden;
 
     // background-color: white;
 
@@ -58,6 +61,8 @@
     }
 
     .footer {
+
+        @include maxWidth600ForDesktop();
 
         padding: 0 20px 20px 20px;
 

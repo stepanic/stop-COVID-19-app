@@ -25,3 +25,9 @@
         margin-top: 64px;
     }
 }
+
+@mixin maxWidth600ForDesktop {
+    @media screen and (min-width: 960px) {
+        max-width: 600px;
+    }
+}
