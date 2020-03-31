@@ -11,6 +11,7 @@
     <mat-form-field class="input-field" color="warn">
         <mat-label>Ime i prezime</mat-label>
         <input matInput [(ngModel)]="model.firstAndLastName" 
+               required
                (change)="onModelChange('firstAndLastName')"
                (keyup)="onModelChange('firstAndLastName')" 
                placeholder="upišite ime i prezime..." >
@@ -21,6 +22,7 @@
         <mat-form-field class="input-field" color="warn">
             <mat-label>Lokacija putovanja</mat-label>
             <input matInput [(ngModel)]="model.travelLocation" 
+                   required
                    (change)="onModelChange('travelLocation')"
                    (keyup)="onModelChange('travelLocation')" 
                    placeholder="upišite grad/mjesto i državu putovanja..." >
@@ -29,15 +31,18 @@
         <mat-form-field class="input-field" color="warn">
             <mat-label>Datum povratka s putovanja</mat-label>
             <input matInput [(ngModel)]="model.travelReturnDate" 
+                   required
                    (change)="onModelChange('travelReturnDate')"
                    (keyup)="onModelChange('travelReturnDate')"
                    placeholder="upišite datum povratka s putovanja..." >
         </mat-form-field>
     </ng-container>
 
+    <p>* sva polja su obavezna</p>
+
 
     <!-- TODO: translate routerLink -->
-    <a mat-raised-button [routerLink]="['/rezultati/preuzimanje']" class="action-success" style="margin-top: 10px;">
+    <a mat-raised-button [class]="{ disabled: !model.firstAndLastName || !model.travelLocation || !model.travelReturnDate }" [routerLink]="['/rezultati/preuzimanje']" class="action-success" style="margin-top: 10px;">
         <div class="action-wrapper" >
             <span *ngIf="lang === 'hr'">STVORI i PREUZMI PNG</span>
             <span *ngIf="lang === 'en'">GENERATE &amp; DOWNLOAD PNG</span>

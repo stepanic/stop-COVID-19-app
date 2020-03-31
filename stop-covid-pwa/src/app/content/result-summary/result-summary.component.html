@@ -20,7 +20,7 @@
     <ng-container *ngFor="let result of results; let i = index" >
         <ng-container *ngIf="result?.value">
             <app-question [id]="result.questionId"
-                          [answer]="result.value"
+                          [answerValue]="result.value"
                           [mode]="'preview'" ></app-question>
             <hr>
         </ng-container>

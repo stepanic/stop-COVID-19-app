@@ -1,3 +1,4 @@
+@import '../../../variables.scss';
 @import '../../../mixins.scss';
 
 app-bar-leaf {
@@ -27,6 +28,11 @@ app-bar-leaf {
 
     @include smartTopMargin();
 
+    .title {
+        background-color: #DEE2E6;
+        padding: 20px;
+    }
+
     .header-data {
 
         border: 2px solid #DEE2E6;
@@ -36,5 +42,10 @@ app-bar-leaf {
 
         padding-top: 20px;
         margin-bottom: 20px;
+
+        .empty-data {
+            font-weight: bold;
+            color: $colorDanger;
+        }
     }
 }

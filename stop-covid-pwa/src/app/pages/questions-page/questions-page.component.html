@@ -12,8 +12,11 @@
 
 <div class="questions-page-wrapper">
 
+    <!-- answerValueForCurrentQuestion = {{ answerValueForCurrentQuestion | json }} -->
 
-    <app-question [id]="questionId" [answer]="answerForCurrentQuestion?.value" (changeAnswerChoice)="onChangeAnswerChoice($event)"></app-question>
+    <app-question [id]="questionId" 
+                  [answerValue]="answerValueForCurrentQuestion" 
+                  (answerValueChange)="onAnswerValueChange($event)"></app-question>
 
     <app-main-banner></app-main-banner>
 
@@ -23,15 +26,15 @@
         <div class="answers" *ngIf="answerConfig.type === AnswerType.BINARY" >
             <button mat-raised-button 
                     class="answer binary negative"
-                    (click)="answer(AnswerType.BINARY, AnswerBinary.NEGATIVE)" >{{ answerConfig.negative.tid | translate }}</button>
+                    (click)="answer(AnswerType.BINARY, AnswerBinary.NEGATIVE, true)" >{{ answerConfig.negative.tid | translate }}</button>
             <div class="flex-spacer"></div>
             <button mat-raised-button 
                     class="answer binary positive"
-                    (click)="answer(AnswerType.BINARY, AnswerBinary.POSITIVE)">{{ answerConfig.positive.tid | translate }}</button>
+                    (click)="answer(AnswerType.BINARY, AnswerBinary.POSITIVE, true)">{{ answerConfig.positive.tid | translate }}</button>
         </div>
         
         <div class="answers" *ngIf="answerConfig.type === AnswerType.MULTIPLE" >
-            <button mat-raised-button class="answer multiple submit" (click)="answer(AnswerType.MULTIPLE)">{{ answerConfig.submit.tid | translate }} &rarr;</button>
+            <button mat-raised-button class="answer multiple submit" (click)="answer(AnswerType.MULTIPLE, answerValueForCurrentQuestion, true)">{{ answerConfig.submit.tid | translate }} &rarr;</button>
         </div>
     </div>
 

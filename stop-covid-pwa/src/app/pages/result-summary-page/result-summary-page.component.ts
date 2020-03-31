@@ -18,6 +18,8 @@ export class ResultSummaryPageComponent implements OnInit {
   public appOrigin: string;
   public appHostName: string;
 
+  public isLocationInputRequired: boolean;
+
   headerData: {
     firstAndLastName: string;
     travelLocation?: string;
@@ -75,6 +77,8 @@ export class ResultSummaryPageComponent implements OnInit {
     const travelLocation = await this.storage.get('PERSONAL_DATA.travelLocation').toPromise();
     const travelReturnDate = await this.storage.get('PERSONAL_DATA.travelReturnDate').toPromise();
 
+    this.isLocationInputRequired = await this.questionsService.isLocationInputRequired;
+
     this.headerData = {
       firstAndLastName: firstAndLastName?.toString(),
       travelLocation: travelLocation?.toString(),
@@ -99,7 +103,7 @@ export class ResultSummaryPageComponent implements OnInit {
       window.scrollTo(0, 0);
       // tslint:disable-next-line: max-line-length
       // const filename = `eTrijaza - Anamnestički obrazac COVID-19 - ${this.headerData.firstAndLastName} - ${this.headerData.dateTimeNow}.png`;
-      const filename = `eTrijaza-UPITNIK.png`;
+      const filename = `eTrijaza-UPITNIK-rezultati.png`;
       this.screenshotService.download('.result-summary-page-wrapper', filename);
     }, 500);
   }

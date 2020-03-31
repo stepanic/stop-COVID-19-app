@@ -13,6 +13,12 @@
 
         max-width: 600px;
 
+        &.disabled {
+            opacity: .5;
+            pointer-events: none;
+            cursor: default; 
+        }
+
         &.action-danger {
             background-color: $colorError;
             color: white;

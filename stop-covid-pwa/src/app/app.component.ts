@@ -67,7 +67,7 @@ export class AppComponent {
 
       // TODO: move to some other place
       // Set title from translation
-      this.titleService.setTitle(event.translations.APP.TITLE.text);
+      this.titleService.setTitle(event.translations.APP.TITLE.text + ' / #ostanidoma');
       this.metaService.updateTag({
         name: 'description',
         content: event.translations.APP.DESCRIPTION.text

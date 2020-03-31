@@ -4,29 +4,36 @@
 
 <div class="result-summary-page-wrapper" >
     
-    <h1>eTrijaža @<a [href]="appOrigin" >{{ appHostName }}</a></h1>
+    <h1><b>eTrijaža</b> @<a [href]="appOrigin" >{{ appHostName }}</a></h1>
 
-    <h2>Anamnestički obrazac procjene rizika i simptoma za COVID-19</h2>
+    <h2 class="title">Anamnestički obrazac procjene rizika i simptoma za COVID-19</h2>
 
     <div class="header-data" *ngIf="headerData" >
         <h3 *ngFor="let key of Object.keys(headerData)" >
 
             <span *ngIf="key === 'firstAndLastName'" >
                 <b>Ime i prezime:</b>&nbsp;{{ headerData[key] }}
+                <span class="empty-data" *ngIf="!headerData[key]">NIJE UPISANO</span>
             </span>
-
-            <span *ngIf="key === 'travelLocation' && headerData[key]" >
+            
+            <span *ngIf="key === 'travelLocation' && isLocationInputRequired" >
                 <b>Lokacija putovanja (grad/mjesto i država):</b>&nbsp;{{ headerData[key] }}
+                <span class="empty-data" *ngIf="!headerData[key]">NIJE UPISANO</span>
             </span>
-
-            <span *ngIf="key === 'travelReturnDate' && headerData[key]" >
+            
+            <span *ngIf="key === 'travelReturnDate' && isLocationInputRequired" >
                 <b>Datum povratka s putovanja:</b>&nbsp;{{ headerData[key] }}
+                <span class="empty-data" *ngIf="!headerData[key]">NIJE UPISANO</span>
             </span>
 
             <span *ngIf="key === 'dateTimeNow' && headerData[key]" >
-                <b>Datum i vrijeme generiranja rezultata:</b>&nbsp;{{ headerData[key] }}
+                <b>Datum i vrijeme izrade obrasca:</b>&nbsp;{{ headerData[key] }}
             </span>
     
+        </h3>
+
+        <h3>
+            <em>Ovaj dokument je izrađen putem web aplikacije dostupne na <b>{{ appOrigin }}</b></em>
         </h3>
 
     </div>

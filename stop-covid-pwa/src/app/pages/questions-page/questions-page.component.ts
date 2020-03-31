@@ -19,7 +19,7 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
 
   public questionId: number;
   public answerConfig: any;
-  public answerForCurrentQuestion: any;
+  public answerValueForCurrentQuestion: any;
 
   public multipleChoicesAnswer: any;
 
@@ -45,50 +45,58 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
   /**
    * Store answer to the question
    * @param type is type of the question
+   * @param navigateToNextPage is flag does it should navigate to next page
    * @param value is optional but it is passed for questions with binary answer, multiple choices answer is fetched async
    */
-  public answer(type: AnswerType, value?: any) {
+  public answer(type: AnswerType, value: any, navigateToNextPage: boolean) {
 
-    
-    if (type === AnswerType.BINARY && value || type === AnswerType.MULTIPLE) {
-      const answer = {
-        questionId: this.questionId,
-        type,
-        value: value ? value : (type === AnswerType.MULTIPLE ? {} : null)
-      };
+    // Buidl answer object
+    const answer = {
+      questionId: this.questionId,
+      type,
+      value
+    };
 
-      this.questionsService.storeAnswer(answer);
-    }
+    // Store answer
+    this.questionsService.storeAnswer(answer);
 
-    // Automatic to next question on binary answer
-    if (type === AnswerType.BINARY || type === AnswerType.MULTIPLE && !value) {
+    // THIS IS BUG, it will avoid situation where no choice is checked
+    // BINARY save always, MULTIPLE save only when no navigate to next page
+    // if (type === AnswerType.BINARY || type === AnswerType.MULTIPLE && !navigateToNextPage) {
+    // }
+
+    if (navigateToNextPage) {
+      // Automatic navigate to next page (question or results)
       const nextQuestionId = Math.min(this.questionId + 1, this.howManyQuestions);
-      this.router.navigate(['/', 'pitanje', nextQuestionId]);
-    }
 
-    // After submited answer to last question redirect
-    if (this.questionId === this.howManyQuestions) {
-      this.navigateToCorrectCaution();
+      // After submited answer to last question redirect
+      if (this.questionId === this.howManyQuestions) {
+        this.navigateToCorrectCaution();
+      } else {
+        this.router.navigate(['/', 'pitanje', nextQuestionId]);
+      }
     }
-
   }
 
   /**
    * Listen for the changes from listed answer choices
    * @param answerChoice is object with new checked answer choice
    */
-  public onChangeAnswerChoice(answerChoice) {
-    // console.log('new ac', answerChoice);
+  public onAnswerValueChange(answerChoice) {
+    // console.log('QuestionsPage.onAnswerValueChange.answerChoice', answerChoice);
 
-    const answer = {};
+    const answerValue = {};
     for (const choice of Object.entries(answerChoice)) {
       if (choice[1]) {
-        answer[choice[0]] = true;
+        answerValue[choice[0]] = true;
       }
     }
 
-    // DO NOT confirm answer here
-    this.answer(AnswerType.MULTIPLE, answer);
+    // Store answer but do not navigate to next page (do not call this.answer)
+    this.answerValueForCurrentQuestion = answerValue;
+    // This is protection to lose changes if /pojasnjenje/XXX is opened after making chnages
+    this.answer(AnswerType.MULTIPLE, answerValue, false);
+    // console.log('QuestionsPage.onAnswerValueChange.answerForCurrentQuestion', this.answerForCurrentQuestion);
   }
 
   private initPage() {
@@ -103,8 +111,12 @@ export class QuestionsPageComponent implements OnInit, OnDestroy {
       // console.log('this.questionId', this.questionId);
 
       this.questionsService.getAnswer(this.questionId).then(answer => {
-        // console.log('answer je', answer);
-        this.answerForCurrentQuestion = answer;
+        // console.log('QuestionsPage.checkRoute.getAnswer', answer);
+        if (answer && answer.value) {
+          this.answerValueForCurrentQuestion = answer.value;
+        } else {
+          this.answerValueForCurrentQuestion = {};
+        }
       });
 
       // this.multipleChoicesAnswer = await this.questionsService.getAnswer(this.questionId);

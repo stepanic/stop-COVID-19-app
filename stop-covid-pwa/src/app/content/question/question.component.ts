@@ -10,9 +10,9 @@ import { Subscription } from 'rxjs';
 export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
 
   @Input() public id: string;
-  @Input() public answer: any; // existing answer to prefill choices
+  @Input() public answerValue: any; // existing answer to prefill choices
+  @Output() public answerValueChange = new EventEmitter<any>();
   @Input() public mode?: 'preview';
-  @Output() public changeAnswerChoice = new EventEmitter<any>();
 
   public question: any;
   public answerChoices: string[];
@@ -22,6 +22,7 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
   private subscription: Subscription = new Subscription();
 
   constructor(private translate: TranslateService) {
+    // this.answerValue = {};
   }
 
   ngOnInit(): void {
@@ -29,10 +30,7 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // console.log(changes);
-    if (changes.answer && !changes.answer.currentValue && !this.answer) {
-      this.answer = {};
-    }
+    // console.log('QuestionComponent.ngOnChanges', changes);
     if (changes.id) {
       this.id = changes.id.currentValue;
       this.reloadData();
@@ -48,8 +46,8 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
    * @param changes is object with changes
    */
   public onChangeAnswerChoice(changes) {
-    this.answer[changes.source.value] = changes.checked;
-    this.changeAnswerChoice.emit(this.answer);
+    this.answerValue[changes.source.value] = changes.checked;
+    this.answerValueChange.emit(this.answerValue);
   }
 
   /**
@@ -72,6 +70,7 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
 
       this.question = [];
       this.answerChoices = null;
+      // this.answerValue = {};
 
       for (const key of keys) {
         if (key === 'ANSWER_CHOICE') {

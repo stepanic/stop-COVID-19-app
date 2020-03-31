@@ -112,7 +112,8 @@ export class QuestionsService {
     // console.log('storeAnswer', answer);
 
     // disable save without value
-    if (!answer.value || Object.keys(answer.value).length === 0) {
+    // if (!answer.value || Object.keys(answer.value).length === 0) { // This will stuck proceed to results page
+    if (!answer.value) {
       return;
     }
 

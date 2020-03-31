@@ -1,5 +1,6 @@
 <div class="question-wrapper" >
 
+    <!-- {{ answerValue | json }} -->
     <span *ngIf="mode === 'preview'"><b>{{ id }}.</b>&nbsp;</span>
 
     <ng-container *ngFor="let part of question">
@@ -12,17 +13,20 @@
     <div class="answer-choices-wrapper" [class]="mode" *ngIf="answerChoices" >
         <ng-container *ngFor="let choice of answerChoices">
             <div class="choice">
-                <mat-checkbox [value]="choice.text" [disabled]="mode === 'preview'" [checked]="answer[choice.text]" (change)="onChangeAnswerChoice($event)">{{ choice.text }}</mat-checkbox>
+                <mat-checkbox [value]="choice.text"
+                             [disabled]="mode === 'preview'"
+                             [checked]="answerValue && answerValue[choice.text]"
+                             (change)="onChangeAnswerChoice($event)">{{ choice.text }}</mat-checkbox>
             </div>
         </ng-container>
     </div>
 
     <!-- PREVIEW answer -->
     <div class="answer-preview" *ngIf="mode === 'preview'" >
-        <div class="binary-answer" [class]="answer" *ngIf="answer === 'POSITIVE' || answer === 'NEGATIVE'" >
+        <div class="binary-answer" [class]="answerValue" *ngIf="answerValue === 'POSITIVE' || answerValue === 'NEGATIVE'" >
             <!-- TODO: fetch config from QuestionsService -->
-            <span *ngIf="answer === 'POSITIVE'" >{{ 'CONFIG.QUESTION.ANSWER.TYPE.BINARY.NO' | translate }}</span>
-            <span *ngIf="answer === 'NEGATIVE'" >{{ 'CONFIG.QUESTION.ANSWER.TYPE.BINARY.YES' | translate }}</span>
+            <span *ngIf="answerValue === 'POSITIVE'" >{{ 'CONFIG.QUESTION.ANSWER.TYPE.BINARY.NO' | translate }}</span>
+            <span *ngIf="answerValue === 'NEGATIVE'" >{{ 'CONFIG.QUESTION.ANSWER.TYPE.BINARY.YES' | translate }}</span>
         </div>
     </div>
 </div>
