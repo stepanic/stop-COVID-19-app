@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFireAnalyticsModule, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,7 +42,10 @@ export function createTranslateLoader(http: HttpClient) {
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     UiModule,
   ],
-  providers: [],
+  providers: [
+    ScreenTrackingService,
+    UserTrackingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
