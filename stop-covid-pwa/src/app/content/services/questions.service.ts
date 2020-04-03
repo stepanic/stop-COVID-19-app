@@ -203,6 +203,12 @@ export class QuestionsService {
     for (const answer of answers) {
       // console.log(answer);
 
+      if (!answer) {
+        // console.log('Tu je greska', answers);
+        A.push(0);
+        continue;
+      }
+
       if (answer.type === AnswerType.BINARY) {
         if (answer.value === AnswerBinary.NEGATIVE) {
           A.push(1);

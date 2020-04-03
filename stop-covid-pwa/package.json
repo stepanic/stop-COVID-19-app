@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "deploy:prod": "ng build --prod && firebase deploy --only hosting --target stop-covid-pwa",
+    "deploy:prod": "ng build --prod && firebase deploy --only hosting:stop-covid-pwa",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
