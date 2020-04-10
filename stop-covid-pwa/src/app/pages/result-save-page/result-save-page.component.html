@@ -17,6 +17,15 @@
                placeholder="upišite ime i prezime..." >
     </mat-form-field>
 
+    <mat-form-field class="input-field" color="warn">
+        <mat-label>Boravište posljednjih 14 dana</mat-label>
+        <input matInput [(ngModel)]="model.livingPlaceLast14Days" 
+               required
+               (change)="onModelChange('livingPlaceLast14Days')"
+               (keyup)="onModelChange('livingPlaceLast14Days')" 
+               placeholder="upišite mjesta/općine/gradove boravka..." >
+    </mat-form-field>
+
     <ng-container *ngIf="isVisibleTravelData">
 
         <mat-form-field class="input-field" color="warn">
@@ -42,7 +51,7 @@
 
 
     <!-- TODO: translate routerLink -->
-    <a mat-raised-button [class]="{ disabled: !model.firstAndLastName || (isVisibleTravelData ? (!model.travelLocation || !model.travelReturnDate) : false) }" [routerLink]="['/rezultati/preuzimanje']" class="action-success" style="margin-top: 10px;">
+    <a mat-raised-button [class]="{ disabled: !model.firstAndLastName || !model.livingPlaceLast14Days || (isVisibleTravelData ? (!model.travelLocation || !model.travelReturnDate) : false) }" [routerLink]="['/rezultati/preuzimanje']" class="action-success" style="margin-top: 10px;">
         <div class="action-wrapper" >
             <span *ngIf="lang === 'hr'">STVORI i PREUZMI PNG</span>
             <span *ngIf="lang === 'en'">GENERATE &amp; DOWNLOAD PNG</span>

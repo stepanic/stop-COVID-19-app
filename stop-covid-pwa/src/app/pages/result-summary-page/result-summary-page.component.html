@@ -32,7 +32,12 @@
                 <b>Ime i prezime:</b>&nbsp;{{ headerData[key] }}
                 <span class="empty-data" *ngIf="!headerData[key]">NIJE UPISANO</span>
             </span>
-            
+
+            <span *ngIf="key === 'livingPlaceLast14Days'" >
+                <b>Boravište posljednjih 14 dana:</b>&nbsp;{{ headerData[key] }}
+                <span class="empty-data" *ngIf="!headerData[key]">NIJE UPISANO</span>
+            </span>
+
             <span *ngIf="key === 'travelLocation' && isLocationInputRequired" >
                 <b>Lokacija putovanja (grad/mjesto i država):</b>&nbsp;{{ headerData[key] }}
                 <span class="empty-data" *ngIf="!headerData[key]">NIJE UPISANO</span>

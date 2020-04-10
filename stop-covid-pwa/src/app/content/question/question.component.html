@@ -9,14 +9,22 @@
             <span [innerHTML]="part.text"></span>
         </a>
     </ng-container>
+
+    <ng-container *ngFor="let part of note">
+        <div class="note" [innerHTML]="part.text" *ngIf="mode !== 'preview'"></div>
+    </ng-container>
     
     <div class="answer-choices-wrapper" [class]="mode" *ngIf="answerChoices" >
         <ng-container *ngFor="let choice of answerChoices">
-            <div class="choice">
+            <div class="choice" *ngIf="mode !== 'preview'">
                 <mat-checkbox [value]="choice.text"
-                             [disabled]="mode === 'preview'"
                              [checked]="answerValue && answerValue[choice.text]"
                              (change)="onChangeAnswerChoice($event)">{{ choice.text }}</mat-checkbox>
+            </div>
+
+            <div class="choice" *ngIf="mode === 'preview'">
+                <span class="indicator" [class.active]="answerValue && answerValue[choice.text]"><span class="content" >{{ (answerValue && answerValue[choice.text]) ? '&#10004;' : '&nbsp;' }}</span></span>
+                <span class="text">{{ choice.text }}</span>
             </div>
         </ng-container>
     </div>

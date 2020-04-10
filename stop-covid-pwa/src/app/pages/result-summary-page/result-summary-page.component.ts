@@ -22,6 +22,7 @@ export class ResultSummaryPageComponent implements OnInit {
 
   headerData: {
     firstAndLastName: string;
+    livingPlaceLast14Days: string;
     travelLocation?: string;
     travelReturnDate?: string;
 
@@ -74,6 +75,7 @@ export class ResultSummaryPageComponent implements OnInit {
 
     // TODO: move to service
     const firstAndLastName = await this.storage.get('PERSONAL_DATA.firstAndLastName').toPromise();
+    const livingPlaceLast14Days = await this.storage.get('PERSONAL_DATA.livingPlaceLast14Days').toPromise();
     const travelLocation = await this.storage.get('PERSONAL_DATA.travelLocation').toPromise();
     const travelReturnDate = await this.storage.get('PERSONAL_DATA.travelReturnDate').toPromise();
 
@@ -81,6 +83,7 @@ export class ResultSummaryPageComponent implements OnInit {
 
     this.headerData = {
       firstAndLastName: firstAndLastName?.toString(),
+      livingPlaceLast14Days: livingPlaceLast14Days?.toString(),
       travelLocation: travelLocation?.toString(),
       travelReturnDate: travelReturnDate?.toString(),
 

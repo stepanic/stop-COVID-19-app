@@ -13,9 +13,11 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
   @Input() public answerValue: any; // existing answer to prefill choices
   @Output() public answerValueChange = new EventEmitter<any>();
   @Input() public mode?: 'preview';
+  // @Input() public mode?: 'preview' = 'preview';
 
   public question: any;
-  public answerChoices: string[];
+  public answerChoices: any[];
+  public note: any;
 
   public currentPath: string;
 
@@ -71,10 +73,13 @@ export class QuestionComponent implements OnInit, OnDestroy, OnChanges {
       this.question = [];
       this.answerChoices = null;
       // this.answerValue = {};
+      this.note = [];
 
       for (const key of keys) {
         if (key === 'ANSWER_CHOICE') {
           this.answerChoices = Object.values(question[key]);
+        } else if (key === 'NOTE') {
+          this.note = Object.values(question[key]);
         } else {
           this.question.push(question[key]);
         }

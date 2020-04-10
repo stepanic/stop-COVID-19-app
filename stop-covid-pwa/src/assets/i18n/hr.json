@@ -315,7 +315,7 @@
 		},
 		"Q08": {
 			"0": {
-				"text": "Imate li "
+				"text": "Osjećate li "
 			},
 			"1": {
 				"link": "/pojasnjenje/zimica-tresavica-bol-u-misicima-iznemoglost",
@@ -336,6 +336,14 @@
 				},
 				"3": {
 					"text": "IZNEMOGLOST"
+				}
+			},
+			"NOTE": {
+				"0": {
+					"text": "Označite kućicu ispred svake tegobe koju osjećate."
+				},
+				"1": {
+					"text": "Ako ne osjećate biti jednu od navedenih tegoba ostavite prazne kućice."
 				}
 			}
 		},

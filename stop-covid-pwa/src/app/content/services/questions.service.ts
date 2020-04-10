@@ -177,12 +177,37 @@ export class QuestionsService {
    * Erase all collected data
    */
   public clear() {
-
-    // TODO: delete only everything starts with `ANSWER_` but not for example `lang`
-    this.storage.clear().pipe(take(1)).subscribe();
-
-    // console.log('QuestionsService.erase');
+    this.clearAllAnswers();
+    this.clearAllPersonalData();
   }
+
+  /**
+   * Erase all collected answers
+   */
+  public clearAllAnswers() {
+    for (let i = 1; i <= 13; i++) {
+      this.storage.delete('ANSWER_Q' + i.toString().padStart(2, '0')).pipe(take(1)).subscribe();
+    }
+  }
+
+  /**
+   * Erase all collected personal data
+   */
+  private clearAllPersonalData() {
+
+    const personalKeys = [
+      'PERSONAL_DATA.firstAndLastName',
+      'PERSONAL_DATA.livingPlaceLast14Days',
+      'PERSONAL_DATA.travelLocation',
+      'PERSONAL_DATA.travelReturnDate'
+    ];
+
+    for (const personalKey of personalKeys) {
+      this.storage.delete(personalKey).pipe(take(1)).subscribe();
+    }
+
+  }
+
 
   public async getCurrentCautionLevel() {
 

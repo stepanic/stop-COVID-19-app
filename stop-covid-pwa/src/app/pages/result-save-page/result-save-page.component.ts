@@ -16,10 +16,12 @@ export class ResultSavePageComponent implements OnInit {
 
   model: {
     firstAndLastName?: string,
+    livingPlaceLast14Days?: string,
     travelLocation?: string,
     travelReturnDate?: string
   } = {
     firstAndLastName: '',
+    livingPlaceLast14Days: '',
     travelLocation: '',
     travelReturnDate: ''
   };
